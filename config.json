@@ -1,0 +1,146 @@
+{
+	"port": 80,
+	"disqusGroupname": "howto",
+	"urlRootOutline": "http://liveblog.co/users/davewiner/outlines/outline005.opml",
+	"urlDefaultImage": "http://scripting.com/2015/03/21/gratefulDead.png",
+	"googleAnalyticsAccount": "UA-39531990-1",
+	"url404Page": "http://fargo.io/code/404/index.html",
+	"urlFavicon": "http://worldoutline.org/favicon.ico",
+	"robotsTxt": "User-agent: *\nDisallow:\n",
+	"defaultOwnerName": "Dave Winer",
+	"defaultOwnerEmail": "dave.winer@gmail.com",
+	"roots": [
+		{
+			"name": "dave.worldoutline.org",
+			"url": "http://liveblog.co/users/davewiner/outlines/outline005.opml"
+			},
+		{
+			"name": "opmlhowtos.worldoutline.org",
+			"url": "http://fargo.io/code/worldoutline/outlines/howtos.opml",
+			"disqusGroup": "howto"
+			},
+		{
+			"name": "threads.scripting.com",
+			"url": "http://static.scripting.com/orlando/world/daveFromPensacola/2014/04/06/archive245.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "threads2.scripting.com",
+			"url": "http://static.scripting.com/orlando/world/dave/2013/01/28/archive024.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "threads2-on-denver",
+			"url": "http://static.scripting.com/orlando/world/daveFromDenver/2014/04/06/archive152.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "hellofrontier.com",
+			"url": "http://static.scripting.com/orlando/world/daveFromDenver/2014/04/06/archive161.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "googlemapstest.blorkmark.com",
+			"url": "http://static.scripting.com/orlando/world/dave/2012/11/05/archive014.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "editor.bloatware.org",
+			"url": "http://static.scripting.com/orlando/world/dave/2012/12/14/archive017.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "Little Outliner",
+			"url": "http://static.scripting.com/orlando/world/dave/2013/03/11/archive028.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "cmdslash.com",
+			"url": "http://static.scripting.com/orlando/world/dave/2013/03/22/archive037.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "worknotes.scripting.com",
+			"url": "http://fargo.io/code/worldoutline/outlines/worknotes.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "forpoets.org",
+			"url": "http://static.scripting.com/orlando/world/daveFromPensacola/2014/04/06/archive246.opml",
+			"disqusGroup": "howto"
+			},
+		{
+			"name": "redirects",
+			"url": "http://static.scripting.com/orlando/world/daveFromPensacola/2014/04/06/archive231.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "My Sites",
+			"url": "http://static.reallysimple.org/worldoutline/dave/2012/01/05/archive041.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "My Big Outline",
+			"url": "http://static.scripting.com/orlando/world/daveFromPensacola/2014/04/06/archive177.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "Morning Coffee Notes",
+			"url": "http://fargo.io/code/worldoutline/outlines/morningcoffeenotes.opml",
+			"disqusGroup": "scripting2"
+			},
+		{
+			"name": "rssCloud.org",
+			"url": "http://fargo.io/code/worldoutline/outlines/rsscloud.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "riverJs.org",
+			"url": "http://static.scripting.com/orlando/world/daveFromPensacola/2014/04/06/archive257.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "davewiner.com",
+			"url": "http://scripting.com/outlines/davewiner.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "Scratchpad",
+			"url": "http://fargo.io/code/worldoutline/outlines/scratchpad.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "Bootstrap Demos",
+			"url": "http://fargo.io/code/worldoutline/outlines/bootstrapdemos.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "How Dave Develops",
+			"url": "http://static.scripting.com/orlando/world/daveFromPensacola/2014/04/06/archive285.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "Photos",
+			"url": "http://fargo.io/code/worldoutline/outlines/photos.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "worknotes.smallpicture.com",
+			"url": "http://fargo.io/code/worldoutline/outlines/smallpictworknotes.opml",
+			"disqusGroup": "worldoutline"
+			}
+		],
+	
+	"templates": {
+		"default": "http://fargo.io/code/worldoutline/templates/default.html",
+		"outline": "http://fargo.io/code/worldoutline/templates/outline.html",
+		"thread": "http://fargo.io/code/worldoutline/templates/outline.html",
+		"howto": "http://fargo.io/code/worldoutline/templates/howto.html",
+		"blogpost": "http://fargo.io/code/worldoutline/templates/howto.html",
+		"thumblist": "http://fargo.io/code/worldoutline/templates/thumblist.html",
+		"presentation": "http://fargo.io/code/worldoutline/templates/presentation.html",
+		"photo": "http://fargo.io/code/worldoutline/templates/photo.html"
+		},
+	
+	"startupCode": "console.log (\"Hello from config.startupCode.\");"
+	}

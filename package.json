@@ -1,0 +1,15 @@
+{
+	"name": "worldoutline",
+	"author": "Dave Winer <dave@smallpicture.com>",
+	"version": "0.0.40",
+	"scripts": {
+		"start": "node wo.js"
+			},
+	"dependencies" : {
+		"request": "*",
+		"feedparser": "*",
+		"opmlparser": "*",
+		"strftime": "*",
+		"marked": "*"
+		} 
+	}
