@@ -1,4 +1,4 @@
-var myVersion = "0.46m", myProductName = "World Outline"; 
+var myVersion = "0.46n", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -2059,6 +2059,7 @@ function worldOutline (urlOutline, domain, path, callback) {
 					
 					if (flfound) {
 						var theType = stringLower (getNodeType (nomad)), urlTemplate = getTemplate (theType);
+						nomad.urlOutline = urlOutline; //so it gets into the pagetable -- 7/10/15 by DW
 						
 						
 						switch (theType) {
