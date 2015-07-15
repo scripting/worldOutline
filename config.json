@@ -9,6 +9,7 @@
 	"robotsTxt": "User-agent: *\nDisallow:\n",
 	"defaultOwnerName": "Dave Winer",
 	"defaultOwnerEmail": "dave.winer@gmail.com",
+	"myDomain": "hyper.camp",
 	"roots": [
 		{
 			"name": "dave.worldoutline.org",
@@ -128,9 +129,23 @@
 			"name": "worknotes.smallpicture.com",
 			"url": "http://fargo.io/code/worldoutline/outlines/smallpictworknotes.opml",
 			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "opacity lab",
+			"url": "http://fargo.io/code/worldoutline/outlines/opacitylab.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "misc stuff",
+			"url": "http://fargo.io/code/worldoutline/outlines/miscstuff.opml",
+			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "workspace from pensacola2",
+			"url": "http://fargo.io/code/worldoutline/outlines/pensacolaworkspace.opml",
+			"disqusGroup": "worldoutline"
 			}
 		],
-	
 	"templates": {
 		"default": "http://fargo.io/code/worldoutline/templates/default.html",
 		"outline": "http://fargo.io/code/worldoutline/templates/outline.html",
@@ -141,6 +156,5 @@
 		"presentation": "http://fargo.io/code/worldoutline/templates/presentation.html",
 		"photo": "http://fargo.io/code/worldoutline/templates/photo.html"
 		},
-	
 	"startupCode": "console.log (\"Hello from config.startupCode.\");"
 	}

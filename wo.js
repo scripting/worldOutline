@@ -1,4 +1,4 @@
-var myVersion = "0.46n", myProductName = "World Outline"; 
+var myVersion = "0.47b", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -513,16 +513,16 @@ function hotUpText (s, url) { //7/18/14 by DW
 	s = leftpart + linktext + rightpart;
 	return (s);
 	}
+function getDomainFromUrl (url) { //7/11/15 by DW
+	if ((url != null ) && (url != "")) {
+		url = url.replace("www.","").replace("www2.", "").replace("feedproxy.", "").replace("feeds.", "");
+		var root = url.split('?')[0]; // cleans urls of form http://domain.com?a=1&b=2
+		url = root.split('/')[2];
+		}
+	return (url);
+	};
 function getFavicon (url) { //7/18/14 by DW
-	function getDomain (url) {
-		if ((url != null ) && (url != "")) {
-			url = url.replace("www.","").replace("www2.", "").replace("feedproxy.", "").replace("feeds.", "");
-			var root = url.split('?')[0]; // cleans urls of form http://domain.com?a=1&b=2
-			var url = root.split('/')[2];
-			}
-		return (url);
-		};
-	var domain = getDomain (url);
+	var domain = getDomainFromUrl (url);
 	return ("http://www.google.com/s2/favicons?domain=" + domain);
 	};
 function getURLParameter (name) { //7/21/14 by DW
@@ -1080,7 +1080,7 @@ function renderThroughTemplate (bodytext, theNode, urlTemplate, readHttpFile, ca
 				pagetable.pagetitle = pagetable.text;
 				}
 			else {
-				pagetable.pagetitle = pagetable.title + ": " + pagetable.text; //the sitename followed by the title of the post
+				pagetable.pagetitle = pagetable.text; //7/14/15 by DW
 				}
 		pagetable.urlstyles = templateConfig.urlDefaultTemplateStyles;
 		pagetable.urlscripts = templateConfig.urlDefaultTemplateScripts;
@@ -1847,7 +1847,76 @@ function get404page (callback) {
 			}
 		});
 	}
-function worldOutline (urlOutline, domain, path, callback) {
+function isNameAvailable (theName) {
+	
+	return ("isNameAvailable: theName == " + theName);
+	
+	function sendStringBack (s) {
+		var x = {"message": s};
+		statsAddToHttpLog (httpRequest, undefined, undefined, now); 
+		httpResponse.end ("getData (" + JSON.stringify (x) + ")");    
+		}
+	httpResponse.writeHead (200, {"Content-Type": "application/json", "Access-Control-Allow-Origin": "fargo.io"});
+	var name = cleanName (parsedUrl.query.name);
+	if (name.length == 0) {
+		sendStringBack ("");    
+		}
+	else {
+		if (name.length < 4) {
+			sendStringBack ("Name must be 4 or more characters.");
+			}
+		else {
+			isNameDefined (name, function (fldefined) {
+				var color, answer;
+				if (fldefined) {
+					color = "red";
+					answer = "is not";
+					}
+				else {
+					color = "green";
+					answer = "is";
+					}
+				sendStringBack ("<span style=\"color: " + color + ";\">" + name + "." + myDomain + " " + answer + " available.</span>")
+				});
+			}
+		}
+	}
+
+function handleSystemRequest (lowerpath, parsedUrl, callback) {
+	switch (lowerpath) {
+		case "/version":
+			callback (200, {"Content-Type": "text/plain"}, myVersion);
+			break;
+		case "/now":
+			callback (200, {"Content-Type": "text/plain"}, new Date ().toString ());
+			break;
+		case "/loaddomains": //5/27/15 by DW
+			buildDomainsTable (function (domains) {
+				console.log (jsonStringify (domains));    
+				callback (200, {"Content-Type": "text/plain"}, jsonStringify (domains));
+				});
+			break;
+		case "/favicon.ico":  //5/27/15 by DW
+			callback (302, {"location": appConfig.urlFavicon}, "302 REDIRECT");
+			break;
+		case "/robots.txt":  //5/27/15 by DW
+			callback (200, {"Content-Type": "text/plain"}, appConfig.robotsTxt);
+			break;
+		case "/stats.json":  //7/8/15 by DW
+			callback (200, {"Content-Type": "application/json"}, jsonStringify (worldOutlineStats));
+			break;
+		case "/isnameavailable": //7/11/15 by DW
+			callback (200, {"Content-Type": "text/html"}, isNameAvailable (parsedUrl.query.name));
+			break;
+		default: 
+			get404page (function (s, type) {
+				callback (404, {"Content-Type": type}, s);
+				});
+			break;
+		}
+	}
+
+function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 	var thisPageUrl;
 	
 	function return404 () {
@@ -1905,7 +1974,6 @@ function worldOutline (urlOutline, domain, path, callback) {
 					function loopOverSubs (nomad) {
 						var subs = nomad.subs;
 						if (subs === undefined) {
-							console.log ("fell off the tree at step == " + theStep);
 							callback (false);
 							}
 						else {
@@ -1916,7 +1984,6 @@ function worldOutline (urlOutline, domain, path, callback) {
 									return;
 									}
 								}
-							console.log ("fell off the tree at step == " + theStep);
 							callback (false);
 							}
 						}
@@ -2114,7 +2181,7 @@ function worldOutline (urlOutline, domain, path, callback) {
 							}
 						}
 					else {
-						return404 ();
+						handleSystemRequest (path, parsedUrl, callback);
 						}
 					});
 				});
@@ -2181,78 +2248,55 @@ function handleRequest (httpRequest, httpResponse) {
 		
 		switch (httpRequest.method) {
 			case "GET":
-				switch (lowerpath) {
-					case "/version":
-						httpResponse.writeHead (200, {"Content-Type": "text/plain", "Access-Control-Allow-Origin": "*"});
-						httpResponse.end (myVersion);    
-						break;
-					case "/now":
-						httpResponse.writeHead (200, {"Content-Type": "text/plain", "Access-Control-Allow-Origin": "*"});
-						httpResponse.end (now.toString ());    
-						break;
-					case "/loaddomains": //5/27/15 by DW
-						buildDomainsTable (function (domains) {
-							httpResponse.writeHead (200, {"Content-Type": "text/plain", "Access-Control-Allow-Origin": "*"});
-							console.log (jsonStringify (domains));    
-							httpResponse.end (jsonStringify (domains));    
+				findDomainOutline (host, function (urlOutline) {
+					if (urlOutline === undefined) { //not one of our domains
+						handleSystemRequest (lowerpath, parsedUrl, function (code, headers, htmltext) {
+							if (headers === undefined) {
+								headers = new Object ();
+								}
+							headers ["Access-Control-Allow-Origin"] = "*";
+							httpResponse.writeHead (code, headers);
+							httpResponse.end (htmltext);
 							});
-						break;
-					case "/favicon.ico":  //5/27/15 by DW
-						returnRedirect (appConfig.urlFavicon);
-						break;
-					case "/robots.txt":  //5/27/15 by DW
-						httpResponse.writeHead (200, {"Content-Type": "text/plain"});
-						httpResponse.end (appConfig.robotsTxt);    
-						break;
-					case "/stats.json":  //7/8/15 by DW
-						httpResponse.writeHead (200, {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"});
-						httpResponse.end (jsonStringify (worldOutlineStats));    
-						break;
-					default: 
-						findDomainOutline (host, function (urlOutline) {
-							if (urlOutline === undefined) { //not one of our domains
-								return404 ();
+						}
+					else {
+						//hits by domain, for all time, and for today
+							if (worldOutlineStats.hitsByDomain [lowerhost] == undefined) {
+								worldOutlineStats.hitsByDomain [lowerhost] = 1;
 								}
 							else {
-								//hits by domain, for all time, and for today
-									if (worldOutlineStats.hitsByDomain [lowerhost] == undefined) {
-										worldOutlineStats.hitsByDomain [lowerhost] = 1;
-										}
-									else {
-										worldOutlineStats.hitsByDomain [lowerhost]++;
-										}
-									
-									if (worldOutlineStats.hitsByDomainToday [lowerhost] == undefined) { //7/8/15 by DW
-										worldOutlineStats.hitsByDomainToday [lowerhost] = 1;
-										}
-									else {
-										worldOutlineStats.hitsByDomainToday [lowerhost]++;
-										}
-									
-									var urltocount = "http://" + lowerhost + lowerpath;
-									if (worldOutlineStats.hitsByUrlToday [urltocount] == undefined) { //7/9/15 by DW
-										worldOutlineStats.hitsByUrlToday [urltocount] = 1;
-										}
-									else {
-										worldOutlineStats.hitsByUrlToday [urltocount]++;
-										}
-									
-									flStatsDirty = true;
-								worldOutline (urlOutline, host, lowerpath, function (code, headers, htmltext) {
-									if (headers === undefined) {
-										headers = new Object ();
-										}
-									headers ["Access-Control-Allow-Origin"] = "*";
-									httpResponse.writeHead (code, headers);
-									httpResponse.end (htmltext);
-									if (code == 200) {
-										saveRenderedPage (host, lowerpath, htmltext);
-										}
-									});
+								worldOutlineStats.hitsByDomain [lowerhost]++;
+								}
+							
+							if (worldOutlineStats.hitsByDomainToday [lowerhost] == undefined) { //7/8/15 by DW
+								worldOutlineStats.hitsByDomainToday [lowerhost] = 1;
+								}
+							else {
+								worldOutlineStats.hitsByDomainToday [lowerhost]++;
+								}
+							
+							var urltocount = "http://" + lowerhost + lowerpath;
+							if (worldOutlineStats.hitsByUrlToday [urltocount] == undefined) { //7/9/15 by DW
+								worldOutlineStats.hitsByUrlToday [urltocount] = 1;
+								}
+							else {
+								worldOutlineStats.hitsByUrlToday [urltocount]++;
+								}
+							
+							flStatsDirty = true;
+						worldOutline (urlOutline, host, lowerpath, parsedUrl, function (code, headers, htmltext) {
+							if (headers === undefined) {
+								headers = new Object ();
+								}
+							headers ["Access-Control-Allow-Origin"] = "*";
+							httpResponse.writeHead (code, headers);
+							httpResponse.end (htmltext);
+							if (code == 200) {
+								saveRenderedPage (host, lowerpath, htmltext);
 								}
 							});
-						break;
-					}
+						}
+					});
 				break;
 			}
 		}
