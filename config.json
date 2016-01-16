@@ -9,8 +9,12 @@
 	"robotsTxt": "User-agent: *\nDisallow:\n",
 	"defaultOwnerName": "Dave Winer",
 	"defaultOwnerEmail": "dave.winer@gmail.com",
-	"myDomain": "hyper.camp",
+	"myDomain": "hyper.camp", 
 	"roots": [
+		{
+			"name": "World outline writing by Dave starting in 2016",
+			"url": "http://fargo.io/code/worldoutline/outlines/wo3.opml"
+			},
 		{
 			"name": "dave.worldoutline.org",
 			"url": "http://liveblog.co/users/davewiner/outlines/outline005.opml"
@@ -144,6 +148,11 @@
 			"name": "workspace from pensacola2",
 			"url": "http://fargo.io/code/worldoutline/outlines/pensacolaworkspace.opml",
 			"disqusGroup": "worldoutline"
+			},
+		{
+			"name": "early experiments with concord outliner",
+			"url": "http://static.scripting.com/orlando/world/daveFromDenver/2014/04/06/archive176.opml",
+			"disqusGroup": "scripting2"
 			}
 		],
 	"templates": {

@@ -1,4 +1,4 @@
-var myVersion = "0.48b", myProductName = "World Outline"; 
+var myVersion = "0.49a", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -176,6 +176,7 @@ function renderThroughTemplate (bodytext, theNode, urlTemplate, readHttpFile, ca
 		pagetable.authorname = pagetable.ownername;
 		pagetable.ogdescription = getPostDescription (theNode);
 		pagetable.ogimage = getPostImage ();
+		pagetable.urlTemplate = urlTemplate; //1/16/16 by DW
 		
 		
 		
