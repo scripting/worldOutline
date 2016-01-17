@@ -1,4 +1,4 @@
-var myVersion = "0.49a", myProductName = "World Outline"; 
+var myVersion = "0.49c", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -827,6 +827,45 @@ function handleSystemRequest (lowerpath, parsedUrl, callback) {
 function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 	var thisPageUrl;
 	
+	function outlineToOPML (theOutline, title) {
+		var xmltext = "", indentlevel = 0;
+		function add (s) {
+			xmltext += utils.filledString ("\t", indentlevel) + s + "\n";
+			}
+		function dolevel (theNode) {
+			var atts = "";
+			for (var x in theNode) {
+				if (x != "subs") {
+					atts += " " + x + "=\"" + utils.encodeXml (theNode [x]) + "\"";
+					}
+				}
+			if (theNode.subs === undefined) {
+				add ("<outline" + atts + " />");
+				}
+			else {
+				add ("<outline" + atts + " >"); indentlevel++;
+				for (var i = 0; i < theNode.subs.length; i++) {
+					dolevel (theNode.subs [i]);
+					}
+				add ("</outline>"); indentlevel--;
+				}
+			}
+		if (title === undefined) {
+			title = "outline";
+			}
+		add ("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
+		add ("<opml version=\"2.0\">"); indentlevel++;
+		add ("<head>"); indentlevel++;
+		add ("<title>" + utils.encodeXml (title) + "</title>");
+		add ("</head>"); indentlevel--;
+		add ("<body>"); indentlevel++;
+		
+		dolevel (theOutline);
+		
+		add ("</body>"); indentlevel--;
+		add ("</opml>"); indentlevel--;
+		return (xmltext);
+		}
 	function return404 () {
 		
 		get404page (function (s, type) {
@@ -1036,56 +1075,72 @@ function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 						var theType = utils.stringLower (getNodeType (nomad)), urlTemplate = getTemplate (theType);
 						nomad.urlOutline = urlOutline; //so it gets into the pagetable -- 7/10/15 by DW
 						
-						
-						switch (theType) {
-							case "outline": case "howto":  case "blogpost":  case "thread":
-								renderOutline (nomad);
-								break;
-							case "presentation":
-								renderPresentation (nomad);
-								break;
-							case "photo":
-								renderPhoto (nomad);
-								break;
-							case "thumblist":
-								if (utils.endsWith (path, "/")) {
-									opml.readOpmlUrl (nomad.url, function (theOutline, err) {
-										if (err) {
-											return500 (err.message);
-											}
-										else {
-											htmltext = renderThumblist (theOutline);
-											
-											nomad.thispageurl = thisPageUrl;
-											
-											renderThroughTemplate (htmltext, nomad, urlTemplate, httpReadUrl, function (s) {
-												returnHtml (s);
-												});
-											}
-										}, false);
-									}
-								else {
-									returnRedirect (path + "/");
-									}
-								break;
-							case "code":
-								callback (200, {"Content-Type": "application/javascript"}, outlineToCode (nomad));
-								break;
-							case "html":
-								gatherTemplateAtts (nomad, pagetable);
-								returnHtml (outlineToCode (nomad, pagetable, true));
-								break;
-							case "redirect": 
-								returnRedirect (nomad.url);
-								break;
-							case "index": default:
-								if (utils.endsWith (path, "/")) {
-									renderIndex (nomad);
-									}
-								else {
-									returnRedirect (path + "/");
-									}
-								break;
+						if (parsedUrl.query.format !== undefined) { //1/17/16 by DW
+							console.log ("worldOutline: parsedUrl.query.format == " + parsedUrl.query.format);
+							switch (utils.stringLower (parsedUrl.query.format)) {
+								case "json": 
+									callback (200, {"Content-Type": "application/json"}, utils.jsonStringify (nomad));
+									break;
+								case "opml": 
+									callback (200, {"Content-Type": "text/xml"}, outlineToOPML (nomad));
+									break;
+								default:
+									return500 ("Can't return the data because the format requested, " + parsedUrl.query.format + " is not supported.");
+									break;
+								}
+							}
+						else {
+							
+							switch (theType) {
+								case "outline": case "howto":  case "blogpost":  case "thread":
+									renderOutline (nomad);
+									break;
+								case "presentation":
+									renderPresentation (nomad);
+									break;
+								case "photo":
+									renderPhoto (nomad);
+									break;
+								case "thumblist":
+									if (utils.endsWith (path, "/")) {
+										opml.readOpmlUrl (nomad.url, function (theOutline, err) {
+											if (err) {
+												return500 (err.message);
+												}
+											else {
+												htmltext = renderThumblist (theOutline);
+												
+												nomad.thispageurl = thisPageUrl;
+												
+												renderThroughTemplate (htmltext, nomad, urlTemplate, httpReadUrl, function (s) {
+													returnHtml (s);
+													});
+												}
+											}, false);
+										}
+									else {
+										returnRedirect (path + "/");
+										}
+									break;
+								case "code":
+									callback (200, {"Content-Type": "application/javascript"}, outlineToCode (nomad));
+									break;
+								case "html":
+									gatherTemplateAtts (nomad, pagetable);
+									returnHtml (outlineToCode (nomad, pagetable, true));
+									break;
+								case "redirect": 
+									returnRedirect (nomad.url);
+									break;
+								case "index": default:
+									if (utils.endsWith (path, "/")) {
+										renderIndex (nomad);
+										}
+									else {
+										returnRedirect (path + "/");
+										}
+									break;
+								}
 							}
 						}
 					else {
