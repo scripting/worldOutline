@@ -1,4 +1,4 @@
-var myVersion = "0.49c", myProductName = "World Outline"; 
+var myVersion = "0.49g", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -49,7 +49,7 @@ var fnameStats = "stats.json", flStatsDirty = false;
 
 var renderedPagesFolder = "renderedPages/";
 
-var outlineCache = new Object ();
+var outlineCache = new Object (), maxCacheSecs = 15;
 
 var templateConfig = {
 	urlDefaultTemplateFile: "http://liveblog.co/template2/index.html",
@@ -87,6 +87,8 @@ function gatherTemplateAtts (theNodeBeingPublished, allTheAtts) {
 	if (thisfilepath !== undefined) {
 		allTheAtts.thisfilepath = thisfilepath;
 		}
+	
+	console.log ("gatherTemplateAtts: allTheAtts == " + utils.jsonStringify (allTheAtts)); //7/16/16 by DW
 	}
 function getTemplateText (pagetable, urlTemplate, readHttpFile, callback) {
 	if (pagetable.template !== undefined) {
@@ -169,7 +171,23 @@ function renderThroughTemplate (bodytext, theNode, urlTemplate, readHttpFile, ca
 		pagetable.urlstyles = templateConfig.urlDefaultTemplateStyles;
 		pagetable.urlscripts = templateConfig.urlDefaultTemplateScripts;
 		pagetable.when = new Date (pagetable.created);
-		pagetable.postDate = strftime ("%a, %b %e, %Y at %l:%M %p", pagetable.when);
+		
+		//set postDate -- 7/16/16 AM by DW
+			(function () {
+				var when = pagetable.whenModified;
+				if (when === undefined) {
+					when = pagetable.when;
+					}
+				if (when === undefined) {
+					pagetable.postDate = "not specified";
+					}
+				else {
+					console.log ("renderThroughTemplate: when == " + when);
+					when = new Date (when);
+					pagetable.postDate = strftime ("%a, %b %e, %Y at %l:%M %p", when);
+					}
+				}) ();
+		
 		pagetable.siteName = pagetable.title;
 		pagetable.flFromEditor = true;
 		pagetable.ogtitle = pagetable.text;
@@ -453,9 +471,51 @@ function outlineToIndex (theOutline, callback) {
 		});
 	}
 
+function readOpmlWithCache (url, callback) { //7/19/16 by DW
+	function copyOutline (theOutline) {
+		var newOutline = new Object ();
+		utils.copyScalars (theOutline, newOutline);
+		if (theOutline.subs !== undefined) {
+			newOutline.subs = new Array ();
+			for (var i = 0; i < theOutline.subs.length; i++) {
+				newOutline.subs [i] = copyOutline (theOutline.subs [i]);
+				}
+			}
+		return (newOutline);
+		}
+	var now = new Date ();
+	if (outlineCache [url] !== undefined) {
+		var item = outlineCache [url];
+		if (utils.secondsSince (item.whenCached) < maxCacheSecs) {
+			item.ctAccesses++;
+			console.log ("readOpmlWithCache: using item from cache, url == " + url + ", item.ctAccesses == " + item.ctAccesses);
+			callback (copyOutline (item.theOutline));
+			return;
+			}
+		else {
+			console.log ("readOpmlWithCache: cache item expired, url == " + url);
+			delete outlineCache [url];
+			}
+		}
+	opml.readOpmlUrl (url, function (theOutline, err) {
+		if (err) {
+			callback (theOutline, err);
+			}
+		else {
+			console.log ("readOpmlWithCache: adding item to cache, url == " + url);
+			outlineCache [url] = {
+				theOutline: theOutline,
+				ctAccesses: 0,
+				whenCached: now
+				};
+			callback (theOutline);
+			}
+		});
+	}
+
 function readInclude (theIncludeNode, callback) {
 	console.log ("readInclude: url == " + theIncludeNode.url);
-	opml.readOpmlUrl (theIncludeNode.url, function (theOutline, err) {
+	readOpmlWithCache (theIncludeNode.url, function (theOutline, err) {
 		if (err) {
 			callback (undefined);
 			}
@@ -909,11 +969,17 @@ function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 			}
 		var thisPageUrl = "http://" + domain + thisPort + path;
 	
-	opml.readOpmlUrl (urlOutline, function (theOutline, err) {
+	readOpmlWithCache (urlOutline, function (theOutline, err) { //7/19/16 by DW -- was opml.readOpmlUrl
 		if (err) {
 			return500 (err.message);
 			}
 		else {
+			var theScalars = {}; //7/16/16 by DW -- debugging
+			utils.copyScalars (theOutline, theScalars); //7/16/16 by DW -- debugging
+			console.log ("worldOutline: theScalars == " + utils.jsonStringify (theScalars)); //7/16/16 by DW -- debugging
+			
+			var whenModified = theOutline.datemodified; //7/16/16 by DW
+			
 			findDomain (theOutline, domain, function (domainOutline) {
 				var steps = utils.stringLower (path).split ("/"), theStep;
 				var ixFirstStep = 0, ixLastStep = steps.length - 1, htmltext, pagetable = new Object ();
@@ -970,9 +1036,8 @@ function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 						opml.expandIncludes (nomad, function (expandedOutline) {
 							htmltext = riverRenderOutline (expandedOutline, false, undefined, undefined, true);
 							nomad.thispageurl = thisPageUrl;
-							
 							nomad.disqusGroupname = getDisqusGroup (urlOutline);
-							
+							nomad.whenModified = whenModified; //7/16/16 by DW
 							renderThroughTemplate (htmltext, nomad, urlTemplate, httpReadUrl, function (s) {
 								returnHtml (s);
 								});
@@ -1076,7 +1141,6 @@ function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 						nomad.urlOutline = urlOutline; //so it gets into the pagetable -- 7/10/15 by DW
 						
 						if (parsedUrl.query.format !== undefined) { //1/17/16 by DW
-							console.log ("worldOutline: parsedUrl.query.format == " + parsedUrl.query.format);
 							switch (utils.stringLower (parsedUrl.query.format)) {
 								case "json": 
 									callback (200, {"Content-Type": "application/json"}, utils.jsonStringify (nomad));
@@ -1103,7 +1167,7 @@ function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 									break;
 								case "thumblist":
 									if (utils.endsWith (path, "/")) {
-										opml.readOpmlUrl (nomad.url, function (theOutline, err) {
+										readOpmlWithCache (nomad.url, function (theOutline, err) {
 											if (err) {
 												return500 (err.message);
 												}
