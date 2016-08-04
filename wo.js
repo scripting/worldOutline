@@ -1,4 +1,4 @@
-var myVersion = "0.49g", myProductName = "World Outline"; 
+var myVersion = "0.49j", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -168,6 +168,15 @@ function renderThroughTemplate (bodytext, theNode, urlTemplate, readHttpFile, ca
 			else {
 				pagetable.pagetitle = pagetable.text; //7/14/15 by DW
 				}
+		//pagetable.headerGraphic -- 7/25/16 by DW
+			if (pagetable.headerGraphic === undefined) {
+				if (pagetable.pagetitle !== undefined) {
+					pagetable.headerGraphic = "<div class=\"divHowtoTitle\" id=\"idHowtoTitle\">" + pagetable.pagetitle + "</div>";
+					}
+				else {
+					pagetable.headerGraphic = "";
+					}
+				}
 		pagetable.urlstyles = templateConfig.urlDefaultTemplateStyles;
 		pagetable.urlscripts = templateConfig.urlDefaultTemplateScripts;
 		pagetable.when = new Date (pagetable.created);
@@ -175,6 +184,9 @@ function renderThroughTemplate (bodytext, theNode, urlTemplate, readHttpFile, ca
 		//set postDate -- 7/16/16 AM by DW
 			(function () {
 				var when = pagetable.whenModified;
+				if (when === undefined) { //7/25/16 by DW
+					when = pagetable.pubdate;
+					}
 				if (when === undefined) {
 					when = pagetable.when;
 					}
