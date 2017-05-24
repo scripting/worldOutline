@@ -10,6 +10,7 @@
 		"feedparser": "*",
 		"opmlparser": "*",
 		"strftime": "*",
-		"marked": "*"
+		"marked": "*",
+		"daveutils": "*"
 		} 
 	}

@@ -1,4 +1,4 @@
-<?xml encoding="ISO-8859-1" version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <opml version="2.0">
 	<head>
 		<title>wo.js</title>
@@ -11,7 +11,7 @@
 		<windowRight>1500</windowRight>
 		</head>
 	<body text="wo.js">
-		<outline created="Mon, 03 Feb 2014 03:21:03 GMT" pgfnum="36831" text="var myVersion = &quot;0.49j&quot;, myProductName = &quot;World Outline&quot;; "></outline>
+		<outline created="Mon, 03 Feb 2014 03:21:03 GMT" pgfnum="36831" text="var myVersion = &quot;0.50g&quot;, myProductName = &quot;World Outline&quot;; "></outline>
 		<outline text="var fs = require (&quot;fs&quot;);"></outline>
 		<outline text="var request = require (&quot;request&quot;);"></outline>
 		<outline text="var opmlParser = require (&quot;opmlparser&quot;);"></outline>
@@ -21,7 +21,8 @@
 		<outline text="var marked = require (&quot;marked&quot;);"></outline>
 		<outline text="var strftime = require (&quot;strftime&quot;);"></outline>
 		<outline text="var dns = require (&quot;dns&quot;);"></outline>
-		<outline text="var utils = require (&quot;./lib/utils.js&quot;); //7/15/15 by DW"></outline>
+		<outline text="var utils = require (&quot;daveutils&quot;); //5/24/17 by DW"></outline>
+		<outline isComment="true" text="var utils = require (&quot;./lib/utils.js&quot;); //7/15/15 by DW"></outline>
 		<outline text="var opml = require (&quot;./lib/opml.js&quot;); //7/15/15 by DW"></outline>
 		<outline text=""></outline>
 		<outline text="var riverConfig = {">
@@ -48,7 +49,12 @@
 		<outline text="var appConfig = {">
 			<outline text="port: 80,"></outline>
 			<outline text="&quot;disqusGroupname&quot;: &quot;scripting&quot;,"></outline>
-			<outline text="&quot;urlRootOutline&quot;: &quot;http://liveblog.co/users/davewiner/outlines/outline005.opml&quot;"></outline>
+			<outline text="&quot;urlRootOutline&quot;: &quot;http://liveblog.co/users/davewiner/outlines/outline005.opml&quot;,"></outline>
+			<outline text="renderedPages: {">
+				<outline text="flSave: false,"></outline>
+				<outline text="flServe: false"></outline>
+				<outline text="}"></outline>
+				</outline>
 			<outline text="}"></outline>
 			</outline>
 		<outline text="var globalDomains;"></outline>
@@ -179,9 +185,16 @@
 							<outline text="}"></outline>
 							</outline>
 						<outline text="else {">
-							<outline created="Tue, 11 Jun 2013 13:43:44 GMT" pgfnum="25734" text="var storedStats = JSON.parse (data.toString ());"></outline>
-							<outline text="for (var x in storedStats) {">
-								<outline text="stats [x] = storedStats [x];"></outline>
+							<outline text="try { //8/4/16 by DW">
+								<outline created="Tue, 11 Jun 2013 13:43:44 GMT" pgfnum="25734" text="var storedStats = JSON.parse (data.toString ());"></outline>
+								<outline text="for (var x in storedStats) {">
+									<outline text="stats [x] = storedStats [x];"></outline>
+									<outline text="}"></outline>
+									</outline>
+								<outline text="}"></outline>
+								</outline>
+							<outline text="catch (err) {">
+								<outline text="console.log (&quot;readStats: error parsing stats, err.message == &quot; + err.message);"></outline>
 								<outline text="}"></outline>
 								</outline>
 							<outline text="writeStats (f, stats, function () {">
@@ -211,31 +224,82 @@
 				</outline>
 			<outline text="}"></outline>
 			</outline>
+		<outline text=""></outline>
+		<outline text=""></outline>
 		<outline text="function saveRenderedPage (host, lowerpath, htmltext) {">
-			<outline text="var f;"></outline>
-			<outline text="if (utils.endsWith (lowerpath, &quot;/&quot;)) {">
-				<outline text="lowerpath += &quot;index.html&quot;;"></outline>
+			<outline text="if (appConfig.renderedPages.flSave) {">
+				<outline text="var f;"></outline>
+				<outline text="if (utils.endsWith (lowerpath, &quot;/&quot;)) {">
+					<outline text="lowerpath += &quot;index.html&quot;;"></outline>
+					<outline text="}"></outline>
+					</outline>
+				<outline text="f = renderedPagesFolder + utils.stringLower (host) + lowerpath;"></outline>
+				<outline text="fsSureFilePath (f, function () {">
+					<outline text="fs.exists (f, function (flExists) {">
+						<outline text="if (!flExists) {">
+							<outline text="fs.writeFile (f, htmltext, function (err) {">
+								<outline text="if (err) {">
+									<outline text="console.log (&quot;saveRenderedPage: error == &quot; + err.message + &quot;, f == &quot; + f);"></outline>
+									<outline text="}"></outline>
+									</outline>
+								<outline text="});"></outline>
+								</outline>
+							<outline text="}"></outline>
+							</outline>
+						<outline text="});"></outline>
+						</outline>
+					<outline text="});"></outline>
+					</outline>
 				<outline text="}"></outline>
 				</outline>
-			<outline text="f = renderedPagesFolder + utils.stringLower (host) + lowerpath;"></outline>
-			<outline text="fsSureFilePath (f, function () {">
+			<outline text="}"></outline>
+			</outline>
+		<outline text="function serveRenderedPage (host, lowerpath, flEnabled, callback) {">
+			<outline isComment="true" text="Changes">
+				<outline text="5/24/17; 2:06:25 PM by DW">
+					<outline text="Added the very bizarre parameter flEnabled. The way the calling code is structured, makes it incredibly costly code-complexity-wise to test a condition before trying to serve from the cache. So we just pass a boolean value, and we do the circuiting. This is super gross. ;-)"></outline>
+					</outline>
+				</outline>
+			<outline text="if (appConfig.renderedPages.flServe &amp;&amp; flEnabled) {">
+				<outline text="var f;"></outline>
+				<outline text="if (utils.endsWith (lowerpath, &quot;/&quot;)) {">
+					<outline text="lowerpath += &quot;index.html&quot;;"></outline>
+					<outline text="}"></outline>
+					</outline>
+				<outline text="f = renderedPagesFolder + utils.stringLower (host) + lowerpath;"></outline>
 				<outline text="fs.exists (f, function (flExists) {">
-					<outline text="if (!flExists) {">
-						<outline text="fs.writeFile (f, htmltext, function (err) {">
+					<outline text="if (flExists) {">
+						<outline text="fs.readFile (f, function (err, data) {">
 							<outline text="if (err) {">
-								<outline text="console.log (&quot;saveRenderedPage: error == &quot; + err.message + &quot;, f == &quot; + f);"></outline>
+								<outline text="console.log (&quot;processFile: f == &quot; + f + &quot;, err.message == &quot; + err.message);"></outline>
+								<outline text="callback (undefined);"></outline>
+								<outline text="}"></outline>
+								</outline>
+							<outline text="else {">
+								<outline text="callback (data.toString ());"></outline>
 								<outline text="}"></outline>
 								</outline>
 							<outline text="});"></outline>
 							</outline>
+						<outline text=""></outline>
+						<outline text="}"></outline>
+						</outline>
+					<outline text="else {">
+						<outline text="callback (undefined);"></outline>
 						<outline text="}"></outline>
 						</outline>
 					<outline text="});"></outline>
 					</outline>
-				<outline text="});"></outline>
+				<outline text="}"></outline>
+				</outline>
+			<outline text="else {">
+				<outline text="callback (undefined);"></outline>
+				<outline text="}"></outline>
 				</outline>
 			<outline text="}"></outline>
 			</outline>
+		<outline text=""></outline>
+		<outline text=""></outline>
 		<outline text="function debugNode (theNode) {">
 			<outline text="var attstext = &quot;&quot;;"></outline>
 			<outline text="for (var x in theNode) {">
@@ -1805,6 +1869,11 @@
 			<outline text="}"></outline>
 			</outline>
 		<outline text="function handleRequest (httpRequest, httpResponse) {">
+			<outline text="function doHttpReturn (code, type, s) { //10/7/16 by DW">
+				<outline text="httpResponse.writeHead (code, {&quot;Content-Type&quot;: type, &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;});"></outline>
+				<outline text="httpResponse.end (s);    "></outline>
+				<outline text="}"></outline>
+				</outline>
 			<outline text="function writeHead (type) {">
 				<outline text="if (type == undefined) {">
 					<outline text="type = &quot;text/plain&quot;;"></outline>
@@ -1847,6 +1916,7 @@
 			<outline created="Tue, 29 Apr 2014 21:25:20 GMT" pgfnum="40664" text="try {">
 				<outline created="Tue, 21 Jan 2014 00:21:43 GMT" pgfnum="36078" text="var parsedUrl = urlpack.parse (httpRequest.url, true), now = new Date (), startTime = now;"></outline>
 				<outline text="var lowerpath = parsedUrl.pathname.toLowerCase (), host, port = 80, flLocalRequest = false, lowerhost;"></outline>
+				<outline text="var flnocache = utils.getBoolean (parsedUrl.query.nocache);"></outline>
 				<outline text=""></outline>
 				<outline text="//set host, port, flLocalRequest">
 					<outline text="host = httpRequest.headers.host;"></outline>
@@ -1878,62 +1948,74 @@
 				<outline text=""></outline>
 				<outline created="Thu, 01 May 2014 20:42:04 GMT" pgfnum="40803" text="switch (httpRequest.method) {">
 					<outline created="Thu, 01 May 2014 20:42:39 GMT" pgfnum="40807" text="case &quot;GET&quot;:">
-						<outline text="findDomainOutline (host, function (urlOutline) {">
-							<outline text="if (urlOutline === undefined) { //not one of our domains">
-								<outline text="handleSystemRequest (lowerpath, parsedUrl, function (code, headers, htmltext) {">
-									<outline text="if (headers === undefined) {">
-										<outline text="headers = new Object ();"></outline>
-										<outline text="}"></outline>
-										</outline>
-									<outline text="headers [&quot;Access-Control-Allow-Origin&quot;] = &quot;*&quot;;"></outline>
-									<outline text="httpResponse.writeHead (code, headers);"></outline>
-									<outline text="httpResponse.end (htmltext);"></outline>
-									<outline text="});"></outline>
-									</outline>
+						<outline text="var flCacheEnabled = (parsedUrl.query.format === undefined) &amp;&amp; (!flnocache);"></outline>
+						<outline text="serveRenderedPage (host, lowerpath, flCacheEnabled, function (htmltext) {">
+							<outline text="if (htmltext !== undefined) {">
+								<outline text="console.log (&quot;handleRequest: returning previously rendered page, &quot; + htmltext.length + &quot; chars.&quot;);"></outline>
+								<outline text="doHttpReturn (200, &quot;text/html&quot;, htmltext);"></outline>
 								<outline text="}"></outline>
 								</outline>
 							<outline text="else {">
-								<outline text="//hits by domain, for all time, and for today">
-									<outline text="if (worldOutlineStats.hitsByDomain [lowerhost] == undefined) {">
-										<outline text="worldOutlineStats.hitsByDomain [lowerhost] = 1;"></outline>
+								<outline text="findDomainOutline (host, function (urlOutline) {">
+									<outline text="if (urlOutline === undefined) { //not one of our domains">
+										<outline text="handleSystemRequest (lowerpath, parsedUrl, function (code, headers, htmltext) {">
+											<outline text="if (headers === undefined) {">
+												<outline text="headers = new Object ();"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text="headers [&quot;Access-Control-Allow-Origin&quot;] = &quot;*&quot;;"></outline>
+											<outline text="httpResponse.writeHead (code, headers);"></outline>
+											<outline text="httpResponse.end (htmltext);"></outline>
+											<outline text="});"></outline>
+											</outline>
 										<outline text="}"></outline>
 										</outline>
 									<outline text="else {">
-										<outline text="worldOutlineStats.hitsByDomain [lowerhost]++;"></outline>
-										<outline text="}"></outline>
-										</outline>
-									<outline text=""></outline>
-									<outline text="if (worldOutlineStats.hitsByDomainToday [lowerhost] == undefined) { //7/8/15 by DW">
-										<outline text="worldOutlineStats.hitsByDomainToday [lowerhost] = 1;"></outline>
-										<outline text="}"></outline>
-										</outline>
-									<outline text="else {">
-										<outline text="worldOutlineStats.hitsByDomainToday [lowerhost]++;"></outline>
-										<outline text="}"></outline>
-										</outline>
-									<outline text=""></outline>
-									<outline text="var urltocount = &quot;http://&quot; + lowerhost + lowerpath;"></outline>
-									<outline text="if (worldOutlineStats.hitsByUrlToday [urltocount] == undefined) { //7/9/15 by DW">
-										<outline text="worldOutlineStats.hitsByUrlToday [urltocount] = 1;"></outline>
-										<outline text="}"></outline>
-										</outline>
-									<outline text="else {">
-										<outline text="worldOutlineStats.hitsByUrlToday [urltocount]++;"></outline>
-										<outline text="}"></outline>
-										</outline>
-									<outline text=""></outline>
-									<outline text="flStatsDirty = true;"></outline>
-									</outline>
-								<outline text="worldOutline (urlOutline, host, lowerpath, parsedUrl, function (code, headers, htmltext) {">
-									<outline text="if (headers === undefined) {">
-										<outline text="headers = new Object ();"></outline>
-										<outline text="}"></outline>
-										</outline>
-									<outline text="headers [&quot;Access-Control-Allow-Origin&quot;] = &quot;*&quot;;"></outline>
-									<outline text="httpResponse.writeHead (code, headers);"></outline>
-									<outline text="httpResponse.end (htmltext);"></outline>
-									<outline text="if (code == 200) {">
-										<outline text="saveRenderedPage (host, lowerpath, htmltext);"></outline>
+										<outline text="//hits by domain, for all time, and for today">
+											<outline text="if (worldOutlineStats.hitsByDomain [lowerhost] == undefined) {">
+												<outline text="worldOutlineStats.hitsByDomain [lowerhost] = 1;"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text="else {">
+												<outline text="worldOutlineStats.hitsByDomain [lowerhost]++;"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text=""></outline>
+											<outline text="if (worldOutlineStats.hitsByDomainToday [lowerhost] == undefined) { //7/8/15 by DW">
+												<outline text="worldOutlineStats.hitsByDomainToday [lowerhost] = 1;"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text="else {">
+												<outline text="worldOutlineStats.hitsByDomainToday [lowerhost]++;"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text=""></outline>
+											<outline text="var urltocount = &quot;http://&quot; + lowerhost + lowerpath;"></outline>
+											<outline text="if (worldOutlineStats.hitsByUrlToday [urltocount] == undefined) { //7/9/15 by DW">
+												<outline text="worldOutlineStats.hitsByUrlToday [urltocount] = 1;"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text="else {">
+												<outline text="worldOutlineStats.hitsByUrlToday [urltocount]++;"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text=""></outline>
+											<outline text="flStatsDirty = true;"></outline>
+											</outline>
+										<outline text="worldOutline (urlOutline, host, lowerpath, parsedUrl, function (code, headers, htmltext) {">
+											<outline text="if (headers === undefined) {">
+												<outline text="headers = new Object ();"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text="headers [&quot;Access-Control-Allow-Origin&quot;] = &quot;*&quot;;"></outline>
+											<outline text="httpResponse.writeHead (code, headers);"></outline>
+											<outline text="httpResponse.end (htmltext);"></outline>
+											<outline text="if (code == 200) {">
+												<outline text="saveRenderedPage (host, lowerpath, htmltext);"></outline>
+												<outline text="}"></outline>
+												</outline>
+											<outline text="});"></outline>
+											</outline>
 										<outline text="}"></outline>
 										</outline>
 									<outline text="});"></outline>
@@ -2055,6 +2137,8 @@
 					<outline text=""></outline>
 					<outline text="buildDomainsTable (function (domains) {">
 						<outline text="console.log (&quot;buildDomainsTable: domains == &quot; + utils.jsonStringify (domains));"></outline>
+						<outline text=""></outline>
+						<outline text="fs.writeFile (&quot;domains.json&quot;, JSON.stringify (domains, undefined, 4));"></outline>
 						<outline text=""></outline>
 						<outline created="Mon, 03 Feb 2014 18:54:58 GMT" pgfnum="36999" text="console.log (&quot;\n&quot; + myProductName + &quot; v&quot; + myVersion + &quot; running on port &quot; + appConfig.port + &quot;.\n&quot;);"></outline>
 						<outline text="http.createServer (handleRequest).listen (appConfig.port);"></outline>

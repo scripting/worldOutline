@@ -1,4 +1,4 @@
-var myVersion = "0.49j", myProductName = "World Outline"; 
+var myVersion = "0.50g", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -8,7 +8,7 @@ var urlpack = require ("url");
 var marked = require ("marked");
 var strftime = require ("strftime");
 var dns = require ("dns");
-var utils = require ("./lib/utils.js"); //7/15/15 by DW
+var utils = require ("daveutils"); //5/24/17 by DW
 var opml = require ("./lib/opml.js"); //7/15/15 by DW
 
 var riverConfig = {
@@ -31,7 +31,11 @@ var configFname = "config.json";
 var appConfig = {
 	port: 80,
 	"disqusGroupname": "scripting",
-	"urlRootOutline": "http://liveblog.co/users/davewiner/outlines/outline005.opml"
+	"urlRootOutline": "http://liveblog.co/users/davewiner/outlines/outline005.opml",
+	renderedPages: {
+		flSave: false,
+		flServe: false
+		}
 	}
 var globalDomains;
 var worldOutlineStats = {
@@ -300,9 +304,14 @@ function readStats (f, stats, callback) {
 						}
 					}
 				else {
-					var storedStats = JSON.parse (data.toString ());
-					for (var x in storedStats) {
-						stats [x] = storedStats [x];
+					try { //8/4/16 by DW
+						var storedStats = JSON.parse (data.toString ());
+						for (var x in storedStats) {
+							stats [x] = storedStats [x];
+							}
+						}
+					catch (err) {
+						console.log ("readStats: error parsing stats, err.message == " + err.message);
 						}
 					writeStats (f, stats, function () {
 						if (callback != undefined) {
@@ -321,24 +330,59 @@ function readStats (f, stats, callback) {
 			}
 		});
 	}
+
+
 function saveRenderedPage (host, lowerpath, htmltext) {
-	var f;
-	if (utils.endsWith (lowerpath, "/")) {
-		lowerpath += "index.html";
+	if (appConfig.renderedPages.flSave) {
+		var f;
+		if (utils.endsWith (lowerpath, "/")) {
+			lowerpath += "index.html";
+			}
+		f = renderedPagesFolder + utils.stringLower (host) + lowerpath;
+		fsSureFilePath (f, function () {
+			fs.exists (f, function (flExists) {
+				if (!flExists) {
+					fs.writeFile (f, htmltext, function (err) {
+						if (err) {
+							console.log ("saveRenderedPage: error == " + err.message + ", f == " + f);
+							}
+						});
+					}
+				});
+			});
 		}
-	f = renderedPagesFolder + utils.stringLower (host) + lowerpath;
-	fsSureFilePath (f, function () {
+	}
+function serveRenderedPage (host, lowerpath, flEnabled, callback) {
+	if (appConfig.renderedPages.flServe && flEnabled) {
+		var f;
+		if (utils.endsWith (lowerpath, "/")) {
+			lowerpath += "index.html";
+			}
+		f = renderedPagesFolder + utils.stringLower (host) + lowerpath;
 		fs.exists (f, function (flExists) {
-			if (!flExists) {
-				fs.writeFile (f, htmltext, function (err) {
+			if (flExists) {
+				fs.readFile (f, function (err, data) {
 					if (err) {
-						console.log ("saveRenderedPage: error == " + err.message + ", f == " + f);
+						console.log ("processFile: f == " + f + ", err.message == " + err.message);
+						callback (undefined);
+						}
+					else {
+						callback (data.toString ());
 						}
 					});
+				
+				}
+			else {
+				callback (undefined);
 				}
 			});
-		});
+		}
+	else {
+		callback (undefined);
+		}
 	}
+
+
 function debugNode (theNode) {
 	var attstext = "";
 	for (var x in theNode) {
@@ -1228,6 +1272,10 @@ function worldOutline (urlOutline, domain, path, parsedUrl, callback) {
 		}, false);
 	}
 function handleRequest (httpRequest, httpResponse) {
+	function doHttpReturn (code, type, s) { //10/7/16 by DW
+		httpResponse.writeHead (code, {"Content-Type": type, "Access-Control-Allow-Origin": "*"});
+		httpResponse.end (s);    
+		}
 	function writeHead (type) {
 		if (type == undefined) {
 			type = "text/plain";
@@ -1261,6 +1309,7 @@ function handleRequest (httpRequest, httpResponse) {
 	try {
 		var parsedUrl = urlpack.parse (httpRequest.url, true), now = new Date (), startTime = now;
 		var lowerpath = parsedUrl.pathname.toLowerCase (), host, port = 80, flLocalRequest = false, lowerhost;
+		var flnocache = utils.getBoolean (parsedUrl.query.nocache);
 		
 		//set host, port, flLocalRequest
 			host = httpRequest.headers.host;
@@ -1287,51 +1336,60 @@ function handleRequest (httpRequest, httpResponse) {
 		
 		switch (httpRequest.method) {
 			case "GET":
-				findDomainOutline (host, function (urlOutline) {
-					if (urlOutline === undefined) { //not one of our domains
-						handleSystemRequest (lowerpath, parsedUrl, function (code, headers, htmltext) {
-							if (headers === undefined) {
-								headers = new Object ();
-								}
-							headers ["Access-Control-Allow-Origin"] = "*";
-							httpResponse.writeHead (code, headers);
-							httpResponse.end (htmltext);
-							});
+				var flCacheEnabled = (parsedUrl.query.format === undefined) && (!flnocache);
+				serveRenderedPage (host, lowerpath, flCacheEnabled, function (htmltext) {
+					if (htmltext !== undefined) {
+						console.log ("handleRequest: returning previously rendered page, " + htmltext.length + " chars.");
+						doHttpReturn (200, "text/html", htmltext);
 						}
 					else {
-						//hits by domain, for all time, and for today
-							if (worldOutlineStats.hitsByDomain [lowerhost] == undefined) {
-								worldOutlineStats.hitsByDomain [lowerhost] = 1;
+						findDomainOutline (host, function (urlOutline) {
+							if (urlOutline === undefined) { //not one of our domains
+								handleSystemRequest (lowerpath, parsedUrl, function (code, headers, htmltext) {
+									if (headers === undefined) {
+										headers = new Object ();
+										}
+									headers ["Access-Control-Allow-Origin"] = "*";
+									httpResponse.writeHead (code, headers);
+									httpResponse.end (htmltext);
+									});
 								}
 							else {
-								worldOutlineStats.hitsByDomain [lowerhost]++;
-								}
-							
-							if (worldOutlineStats.hitsByDomainToday [lowerhost] == undefined) { //7/8/15 by DW
-								worldOutlineStats.hitsByDomainToday [lowerhost] = 1;
-								}
-							else {
-								worldOutlineStats.hitsByDomainToday [lowerhost]++;
-								}
-							
-							var urltocount = "http://" + lowerhost + lowerpath;
-							if (worldOutlineStats.hitsByUrlToday [urltocount] == undefined) { //7/9/15 by DW
-								worldOutlineStats.hitsByUrlToday [urltocount] = 1;
-								}
-							else {
-								worldOutlineStats.hitsByUrlToday [urltocount]++;
-								}
-							
-							flStatsDirty = true;
-						worldOutline (urlOutline, host, lowerpath, parsedUrl, function (code, headers, htmltext) {
-							if (headers === undefined) {
-								headers = new Object ();
-								}
-							headers ["Access-Control-Allow-Origin"] = "*";
-							httpResponse.writeHead (code, headers);
-							httpResponse.end (htmltext);
-							if (code == 200) {
-								saveRenderedPage (host, lowerpath, htmltext);
+								//hits by domain, for all time, and for today
+									if (worldOutlineStats.hitsByDomain [lowerhost] == undefined) {
+										worldOutlineStats.hitsByDomain [lowerhost] = 1;
+										}
+									else {
+										worldOutlineStats.hitsByDomain [lowerhost]++;
+										}
+									
+									if (worldOutlineStats.hitsByDomainToday [lowerhost] == undefined) { //7/8/15 by DW
+										worldOutlineStats.hitsByDomainToday [lowerhost] = 1;
+										}
+									else {
+										worldOutlineStats.hitsByDomainToday [lowerhost]++;
+										}
+									
+									var urltocount = "http://" + lowerhost + lowerpath;
+									if (worldOutlineStats.hitsByUrlToday [urltocount] == undefined) { //7/9/15 by DW
+										worldOutlineStats.hitsByUrlToday [urltocount] = 1;
+										}
+									else {
+										worldOutlineStats.hitsByUrlToday [urltocount]++;
+										}
+									
+									flStatsDirty = true;
+								worldOutline (urlOutline, host, lowerpath, parsedUrl, function (code, headers, htmltext) {
+									if (headers === undefined) {
+										headers = new Object ();
+										}
+									headers ["Access-Control-Allow-Origin"] = "*";
+									httpResponse.writeHead (code, headers);
+									httpResponse.end (htmltext);
+									if (code == 200) {
+										saveRenderedPage (host, lowerpath, htmltext);
+										}
+									});
 								}
 							});
 						}
@@ -1378,6 +1436,8 @@ function startup () {
 			
 			buildDomainsTable (function (domains) {
 				console.log ("buildDomainsTable: domains == " + utils.jsonStringify (domains));
+				
+				fs.writeFile ("domains.json", JSON.stringify (domains, undefined, 4));
 				
 				console.log ("\n" + myProductName + " v" + myVersion + " running on port " + appConfig.port + ".\n");
 				http.createServer (handleRequest).listen (appConfig.port);
