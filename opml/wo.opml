@@ -11,7 +11,7 @@
 		<windowRight>1500</windowRight>
 		</head>
 	<body text="wo.js">
-		<outline created="Mon, 03 Feb 2014 03:21:03 GMT" pgfnum="36831" text="var myVersion = &quot;0.50g&quot;, myProductName = &quot;World Outline&quot;; "></outline>
+		<outline created="Mon, 03 Feb 2014 03:21:03 GMT" pgfnum="36831" text="var myVersion = &quot;0.51a&quot;, myProductName = &quot;World Outline&quot;; "></outline>
 		<outline text="var fs = require (&quot;fs&quot;);"></outline>
 		<outline text="var request = require (&quot;request&quot;);"></outline>
 		<outline text="var opmlParser = require (&quot;opmlparser&quot;);"></outline>
@@ -2138,7 +2138,17 @@
 					<outline text="buildDomainsTable (function (domains) {">
 						<outline text="console.log (&quot;buildDomainsTable: domains == &quot; + utils.jsonStringify (domains));"></outline>
 						<outline text=""></outline>
-						<outline text="fs.writeFile (&quot;domains.json&quot;, JSON.stringify (domains, undefined, 4));"></outline>
+						<outline isComment="true" text="fs.writeFile (&quot;domains.json&quot;, JSON.stringify (domains, undefined, 4));"></outline>
+						<outline isComment="true" text=""></outline>
+						<outline isComment="true" text=""></outline>
+						<outline isComment="true" text=""></outline>
+						<outline text="fs.writeFile (&quot;domains.json&quot;, utils.jsonStringify (domains), function (err) { //9/30/17 by DW">
+							<outline text="if (err) {">
+								<outline text="console.log (&quot;startup: error == &quot; + err.message);"></outline>
+								<outline text="}"></outline>
+								</outline>
+							<outline text="});"></outline>
+							</outline>
 						<outline text=""></outline>
 						<outline created="Mon, 03 Feb 2014 18:54:58 GMT" pgfnum="36999" text="console.log (&quot;\n&quot; + myProductName + &quot; v&quot; + myVersion + &quot; running on port &quot; + appConfig.port + &quot;.\n&quot;);"></outline>
 						<outline text="http.createServer (handleRequest).listen (appConfig.port);"></outline>

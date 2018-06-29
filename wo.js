@@ -1,4 +1,4 @@
-var myVersion = "0.50g", myProductName = "World Outline"; 
+var myVersion = "0.51a", myProductName = "World Outline"; 
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");
@@ -1437,7 +1437,11 @@ function startup () {
 			buildDomainsTable (function (domains) {
 				console.log ("buildDomainsTable: domains == " + utils.jsonStringify (domains));
 				
-				fs.writeFile ("domains.json", JSON.stringify (domains, undefined, 4));
+				fs.writeFile ("domains.json", utils.jsonStringify (domains), function (err) { //9/30/17 by DW
+					if (err) {
+						console.log ("startup: error == " + err.message);
+						}
+					});
 				
 				console.log ("\n" + myProductName + " v" + myVersion + " running on port " + appConfig.port + ".\n");
 				http.createServer (handleRequest).listen (appConfig.port);
