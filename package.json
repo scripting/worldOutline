@@ -1,7 +1,7 @@
 {
 	"name": "worldoutline",
 	"author": "Dave Winer <dave@smallpicture.com>",
-	"version": "0.0.40",
+	"version": "0.5.2",
 	"scripts": {
 		"start": "node wo.js"
 			},

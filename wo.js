@@ -1,4 +1,4 @@
-var myVersion = "0.51a", myProductName = "World Outline";   
+var myVersion = "v0.5.2", myProductName = "World Outline";  
 var fs = require ("fs");
 var request = require ("request");
 var opmlParser = require ("opmlparser");

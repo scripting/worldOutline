@@ -1,0 +1,562 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>nodeEditor: wo Outlines 3</title>
+		<dateCreated>Sun, 03 Jan 2016 18:26:36 GMT</dateCreated>
+		<dateModified>Sat, 14 May 2022 16:10:39 GMT</dateModified>
+		<ownerName>dave.rss</ownerName>
+		<ownerId>http://twitter.com/davewiner</ownerId>
+		<expansionState>1,2,7,16,17</expansionState>
+		<vertScrollState>1</vertScrollState>
+		<windowTop>199</windowTop>
+		<windowLeft>1386</windowLeft>
+		<windowBottom>1265</windowBottom>
+		<windowRight>2344</windowRight>
+		<ownerTwitterScreenName>davewiner</ownerTwitterScreenName>
+		<urlUpdateSocket>ws://drummer.scripting.com:1232/</urlUpdateSocket>
+		<lastCursor>11</lastCursor>
+		</head>
+	<body>
+		<outline text="/fargo.io/code/worldoutline/outlines/" created="Sat, 14 May 2022 16:09:49 GMT">
+			<outline text="wo3.opml" created="Sat, 14 May 2022 16:10:04 GMT">
+				<outline text="Binge-worthy TV shows" created="10/1/16; 10:31:08 AM" domain="bingeworthy.scripting.com" name="bingeworthyTvShows" type="blogpost">
+					<outline text="About this list">
+						<outline text="No spoilers here. But little winks at people who have watched the show. "/>
+						<outline text="Not complete. Still writing and of course watching. &lt;a href=&quot;http://davewiner.com/&quot;&gt;Dave&lt;/a&gt;"/>
+						</outline>
+					<outline text="Shows I loved and highly recommend">
+						<outline text="The Wire">
+							<outline text="The show that got bingeing started as far as I'm concerned."/>
+							<outline text="Baltimore cops, dealers, people, longshoremen, news people."/>
+							<outline text="I've heard people say it's hard to get started with, but it's worth it."/>
+							<outline text="I've watched it at least five times, probalby six or seven (lost count)."/>
+							</outline>
+						<outline text="Breaking Bad">
+							<outline text="Walter White and Jesse Pinkman in the meth age, in Albuquerque. One of the best binges. "/>
+							</outline>
+						<outline text="The Sopranos">
+							<outline text="New Jersey Mob boss in therapy."/>
+							<outline text="The best show, right up there with The Wire, and the one that got the whole bingeing things started."/>
+							<outline text="Lots of people didn't like the finale, but I &lt;i&gt;loved&lt;/i&gt; it. "/>
+							</outline>
+						<outline text="Game of Thrones">
+							<outline text="Medieval depravity and dragons. "/>
+							<outline text="Never can wait for the next season."/>
+							<outline text="Next one starts in April 2016."/>
+							</outline>
+						<outline text="Battlestar Galactica">
+							<outline text="Low budget cheesy special effect science fiction with a great cast, writing, story. "/>
+							<outline text="It's worth staying for the punchline, which some &lt;a href=&quot;https://www.youtube.com/watch?v=uuoVwA7AsFI&quot;&gt;people&lt;/a&gt; didn't like but I did."/>
+							<outline text="Great use of music, lots of innovative ideas about the future, the security of nets."/>
+							</outline>
+						<outline text="Better Call Saul">
+							<outline text="Even better than Breaking Bad. "/>
+							<outline text="There's one episode in the first season where you get the full back-story on Mike, and it's just the best single episode of TV ever. The rest of the season pales, but it's also great entertainment. "/>
+							<outline text="But -- you should watch Breaking Bad before BCS, imho."/>
+							</outline>
+						<outline text="Six Feet Under">
+							<outline text="Family-run mortuary in LA."/>
+							<outline text="Always good to watch, the show finale is the best finale ever."/>
+							</outline>
+						<outline text="Mad Men">
+							<outline text="Advertising in the 60s. Smoking and drinking and sexing. "/>
+							<outline text="Great acting, characters. "/>
+							<outline text="Best scene: the finale of course, but before that Bert Cooper's &lt;a href=&quot;https://www.youtube.com/watch?v=FKgPTkIulEI&quot;&gt;song&lt;/a&gt; and dance. "/>
+							</outline>
+						<outline text="Deadwood">
+							<outline text="One of the best ever, but they stopped making the show before the climax. "/>
+							<outline text="I hear they're making a movie, but it's been ten years, and I think it can't possibly work."/>
+							<outline text="The story of the real town of &lt;a href=&quot;https://en.wikipedia.org/wiki/Deadwood,_South_Dakota#19th_century&quot;&gt;Deadwood&lt;/a&gt; is amazing. "/>
+							<outline text="But, even with the disappointment of no good ending, it's still a great show. "/>
+							</outline>
+						<outline text="The West Wing">
+							<outline text="Not quite a binge show, it's not really a serial, but it's great watching."/>
+							<outline text="It's like Hill Street Blues at the White House. "/>
+							</outline>
+						<outline text="Fargo">
+							<outline text="You wouldn't think it could be good because the movie was so amazing, but it is good the way the movie was, but at the same time original. Two fantastic seasons so far. Another in the pipe, fo4 2017."/>
+							</outline>
+						<outline text="Making a Murderer">
+							<outline text="Netflix series about Steven Avery of Wisconsin who was framed for rape, and then tried for murder, and is currently in jail. "/>
+							</outline>
+						<outline text="Mr Robot">
+							<outline text="A delusional Snowden, on hard drugs."/>
+							<outline text="Loved it. Will definitely watch season 2."/>
+							</outline>
+						<outline text="The Americans">
+							<outline text="Soviet spies in Washington, passing as Americans at the height of the Cold War."/>
+							</outline>
+						<outline text="Homeland, early seasons">
+							<outline text="Loved this show, but it turned bad. "/>
+							<outline text="I made it through season 5, waiting for something interesting to happen, but it was boring, awful, waste of good actors. No story. I won't watch it next season."/>
+							<outline text="The first few seasons are quite good. "/>
+							</outline>
+						<outline text="Transparent">
+							<outline text="I have to admit the idea of Jeffrey Tambor as a trans woman made me ill, but I watched the show anyway, and it was great, both the first and second seasons. They take a while to get started, and the characters are mostly horrible people, but the stories are touching and finally they do win you over. Only in Season 2 you get to hate them all over again. And then it all makes sense, etc. "/>
+							<outline text="BTW, Angelica Houston has a small but nice role. I learned a new acronym from her character: NATO == Not Attached To Outcome. "/>
+							</outline>
+						<outline text="The Fall">
+							<outline text="Gillian Anderson from the X-Files as a super macho Irish police chief working a on serial murder. "/>
+							</outline>
+						<outline text="Olive Kitteridge">
+							<outline text="It's a very fine three-part short binge, with Frances McDormand as Olive, and a suprirse role by Bill Murray. Very sweet story, but not linear, which I like of course. "/>
+							</outline>
+						<outline text="The Knick">
+							<outline text="A hospital in early 1900s New York. Very gory. I had to avert my eyes for the worst of it. But the story is compelling and it is beautifully done. "/>
+							</outline>
+						<outline text="Boss">
+							<outline text="The mayor of Chicago suffers from a fatal disease but that doesn't stop the depravity."/>
+							<outline text="Kelsey Grammer is great. You like evil? This is for you!"/>
+							</outline>
+						<outline text="Silicon Valley">
+							<outline text="I thought I wouldn't like this because it's real close to home, even more than Halt and Catch Fire which I did not like (see below). But they nail it. All the crazy narcissism and cynical back-stabbing and money lust that makes up the tech industry, and it's funny in a Beavis and Butthead way. "/>
+							</outline>
+						<outline text="Rome">
+							<outline text="An HBO series that no one ever seems to talk about, but it was good."/>
+							<outline text="Takes place in ancient historic Rome, the time of Caesar and Cicero and all the slaves and nobles and how they live and die (more about dying than living)."/>
+							</outline>
+						<outline text="Narcos">
+							<outline text="Netflix drama about the life and death of Pablo Escobar in Columbia. A very worthwhile binge. "/>
+							<outline text="Update: Season 2 is great too. "/>
+							</outline>
+						<outline text="The Leftovers">
+							<outline text="What happens when two percent of the population disappears. Seemingly at random. "/>
+							<outline text="Two seasons, both good. No one knows what happened. A good story. Drifts a bit here and there, has a bit of the feel of Lost, but better, imho."/>
+							</outline>
+						</outline>
+					<outline text="Shows I watched that I feel meh about">
+						<outline text="The OA">
+							<outline text="I watched it all the way to the end, it was great until about the halfway point, then it drifted slowly to a confusing unsatisfying end. "/>
+							</outline>
+						<outline text="Stranger Things">
+							<outline text="See the description for The OA, above? Exactly the same. "/>
+							</outline>
+						</outline>
+					<outline text="Shows I tried to watch and didn't like or don't recommend">
+						<outline text="Treme">
+							<outline text="Another one every says is great, but I never made it past John Goodman who seemed very fat and unhealthy and that's basically all I remember about it. I was expecting The Wire. Probably should try again. But maybe once is enough. "/>
+							</outline>
+						<outline text="Halt and Catch Fire">
+							<outline text="Everyone says this is a great show but I can't get into it. "/>
+							<outline text="I tried watching season 1, and it was both ridiculous and inaccurate."/>
+							<outline text="People said try season 2, and I lost interest for the same reason."/>
+							<outline text="My theory is that I actually lived that period of history in the computer industry. I know what happened. They are wrong about it. I imagine this is how lawyers must feel about Law &amp; Order for example. I can't fit the real story and their bullshit story in the same brain. It just doesn't fit. "/>
+							<outline text="You may like it, but don't believe that's how it happened because it didn't happen that way."/>
+							</outline>
+						<outline text="Lillyhammer">
+							<outline text="A mob boss in hiding in Scandanavia. It's fun for a while, but I lost interest in the second season."/>
+							</outline>
+						<outline text="Weeds">
+							<outline text="I liked it for a couple of seasons, but just lost interest. "/>
+							</outline>
+						<outline text="Man in the High Castle">
+							<outline text="Drags on and on, over-acted. I hate shows that have huge dramatic moments that don't feel dramatic. So you play the heavy music and make your face move like it's heavy, but nothing fucking happened."/>
+							<outline text="Maybe it's because I read the book. Which was okay. I basically like everything with Nazis in it, and this could have been fantastic if they had any showmanship, but ugh."/>
+							</outline>
+						<outline text="Lost">
+							<outline text="I kind of liked Lost while it was happening, but I would love to have gotten the time back."/>
+							<outline text="I would watch just the first episode, and leave it at that. The show never topped that. That was the hook that kept me watching, thinking it might get back up to that level again. It never did."/>
+							</outline>
+						<outline text="House of Cards">
+							<outline text="I hate this show. It's so awful. And it could have been so good. "/>
+							<outline text="None of the things the characters do make sense. "/>
+							<outline text="I saw the British version, and that one was GREAT. "/>
+							</outline>
+						<outline text="Boardwalk Empire">
+							<outline text="I watched the first couple of seasons, but fell behind and never caught up."/>
+							<outline text="I guess you could say it wasn't holding my interest."/>
+							</outline>
+						<outline text="Big Love">
+							<outline text="Current-day polygamy in Mormon SLC. "/>
+							<outline text="This could have been on either list."/>
+							<outline text="I didn't watch the last season, but otherwise liked the show."/>
+							<outline text="But it lost me somewhere. "/>
+							</outline>
+						</outline>
+					<outline text="Shows I have queued up">
+						<outline text="Master of None"/>
+						<outline text="Jessica Jones"/>
+						<outline text="Justified">
+							<outline text="People say to skip Season 1, which I tried, but got bored with. I plan to start with Season 2. Everyone says it's great. "/>
+							</outline>
+						</outline>
+					</outline>
+				<outline text="My products" domain="products.scripting.com" name="myProducts" type="blogpost" created="Sat, 14 May 2022 16:10:09 GMT">
+					<outline text="Snacks">
+						<outline text="Radio 3">
+							<outline text="Linkblogging in the browser."/>
+							<outline text="Install the bookmarklet, log on to Facebook and Twitter, and start posting links with your comments, to the two social nets simultaneously as well as a full-featured RSS 2.0 feed. "/>
+							<outline text="radio3.io" name="httpradio3io" type="link" url="http://radio3.io/"/>
+							</outline>
+						<outline text="Happy Friends">
+							<outline text="Mailbox style reader for Twitter."/>
+							<outline text="An outline organizes the people you follow. "/>
+							<outline text="If they've updated their name is bold, double-click to see their recent tweets, sorted by date."/>
+							<outline text="Use this for the people whose updates you must see, even if they don't post frequently, or you aren't watching when they update. "/>
+							<outline text="An essential tool for the serious Twitter user."/>
+							<outline text="happyfriends.camp" type="link" url="http://happyfriends.camp/"/>
+							</outline>
+						<outline text="MyWord Editor"/>
+						<outline text="Little Pork Chop"/>
+						<outline text="Little Card Editor"/>
+						<outline text="Little Facebook Editor"/>
+						<outline text="Thesaurus Land"/>
+						</outline>
+					<outline text="Outliners">
+						<outline text="Fargo"/>
+						<outline text="Little Outliner"/>
+						<outline text="OPML Editor/Frontier"/>
+						</outline>
+					<outline text="Rivers">
+						<outline text="MLB River"/>
+						<outline text="NBA River"/>
+						<outline text="Guardian River"/>
+						<outline text="Washington Post River"/>
+						<outline text="Podcatch"/>
+						</outline>
+					<outline text="Servers">
+						<outline text="River 4"/>
+						<outline text="PagePark"/>
+						<outline text="NodeRunner"/>
+						<outline text="NodeStorage"/>
+						<outline text="URL Shortener"/>
+						</outline>
+					<outline text="Toolkits">
+						<outline text="Concord"/>
+						<outline text="riverBrowser"/>
+						<outline text="outlineBrowser"/>
+						</outline>
+					</outline>
+				<outline text="Toolkits I use in my software" domain="toolkits.scripting.com" name="toolkitsIUseInMySoftware" type="blogpost">
+					<outline text="Client side (in browser)">
+						<outline text="&lt;a href=&quot;http://getbootstrap.com/2.3.2/&quot;&gt;Bootstrap 2&lt;/a&gt;">
+							<outline text="I use it for dialogs and other UI standards. I don't have to think about how to ask for a &lt;a onclick=&quot;askDialog ('What is your name?')&quot; style=&quot;cursor:pointer&quot;&gt;string&lt;/a&gt; or &lt;a onclick=&quot;confirmDialog ('Isn\'t this a nice dialog?')&quot; style=&quot;cursor:pointer&quot;&gt;confirmation&lt;/a&gt;. It's a very useful package of user interface tools. "/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://blog.jquery.com/2013/02/04/jquery-1-9-1-released/&quot;&gt;jQuery 1.9.1&lt;/a&gt;">
+							<outline text="jQuery makes it easy to do all kinds of DOM walks, and animations, and AJAX calls, and probably a lot more. "/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://fortawesome.github.io/Font-Awesome/&quot;&gt;Font-Awesome&lt;/a&gt;">
+							<outline text="All the standard icons used in web apps in the form of a font, so you control their appearance using CSS. It's so nice not to have to do my own bitmaps just to get a standard icon. This is a very important project, please support it."/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://github.com/samsonjs/strftime&quot;&gt;strftime&lt;/a&gt;">
+							<outline text="A more robust date formatter than the one built into JavaScript. "/>
+							<outline text="It's a standard, has been used in Unix apps forever. "/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://code.google.com/p/jbeep/&quot;&gt;jBeep&lt;/a&gt;">
+							<outline text="I just use this for a &lt;a onclick=&quot;speakerBeep ()&quot; style=&quot;cursor: pointer&quot;&gt;system beep&lt;/a&gt; sound, I borrowed from the Mac. "/>
+							</outline>
+						<outline text="Google Fonts">
+							<outline text="I use several Google fonts in my projects. My primary font is Ubuntu. "/>
+							<outline text="&lt;a href=&quot;http://littlecardeditor.com/&quot;&gt;Little Card Editor&lt;/a&gt; can be configured to use any Google Font. "/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://github.com/yabwe/medium-editor&quot;&gt;medium-editor&lt;/a&gt;">
+							<outline text="A simple clone of the Medium editor. I use this in the &lt;a href=&quot;http://myword.io/editor/&quot;&gt;MyWord Editor&lt;/a&gt; project, and am using it as the blog post and comment editor in 1999.io (still in development)."/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://code.google.com/p/pagedown/wiki/PageDown&quot;&gt;pagedown&lt;/a&gt;">
+							<outline text="I chose this markdown processor because it's the one Stack Overflow uses. "/>
+							</outline>
+						</outline>
+					<outline text="Server side (node.js)">
+						<outline text="&lt;a href=&quot;https://www.npmjs.com/package/node-twitter-api&quot;&gt;node-twitter-api&lt;/a&gt;">
+							<outline text="Low-level interface to the Twitter API. I built a higher-level layer on top of it in  &lt;a href=&quot;https://github.com/scripting/nodeStorage&quot;&gt;nodeStorage&lt;/a&gt;, which combines the Twitter API with storage. "/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://aws.amazon.com/sdk-for-node-js/&quot;&gt;aws-sdk&lt;/a&gt;">
+							<outline text="Glue for AWS, for most of my applications that's just S3. "/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://github.com/danmactough/node-opmlparser&quot;&gt;opmlparser&lt;/a&gt;">
+							<outline text="Dan MacTough's package that handles parsing of OPML files, used for subscription lists in &lt;a href=&quot;https://github.com/scripting/river4&quot;&gt;River4&lt;/a&gt;, and for parsing OPML documents in other server software."/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://github.com/danmactough/node-feedparser&quot;&gt;feedparser&lt;/a&gt;">
+							<outline text="Dan MacTough's package that handles parsing of RSS feeds. Used in &lt;a href=&quot;https://github.com/scripting/river4&quot;&gt;River4&lt;/a&gt;."/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://github.com/chjj/marked&quot;&gt;marked&lt;/a&gt;">
+							<outline text="Turns markdown source text into HTML."/>
+							</outline>
+						<outline text="&lt;a href=&quot;https://github.com/sitegui/nodejs-websocket&quot;&gt;nodejs-websocket&lt;/a&gt;">
+							<outline text="Basic WebSocket functions. I use this in nodeStorage to provide instant updates to the 1999 editor and clients. Used in support of &lt;a href=&quot;http://scripting.com/&quot;&gt;Scripting News&lt;/a&gt; instant updates."/>
+							</outline>
+						</outline>
+					<outline text="Philosophy, narrative">
+						<outline text="See this &lt;a href=&quot;http://scripting.com/liveblog/users/davewiner/2016/01/18/0886.html&quot;&gt;blog post&lt;/a&gt; for background on how I choose toolkits. "/>
+						<outline text="I am very conservative. Anything that's rocking and rolling has to get stable before I use it. "/>
+						<outline text="My own code does the rocking and rolling. ;-)"/>
+						</outline>
+					</outline>
+				<outline text="Comment guidelines" domain="guidelines.scripting.com" name="commentGuidelines" type="blogpost">
+					<outline text="Scripting News is a blog">
+						<outline text="&lt;a href=&quot;http://scripting.com/&quot;&gt;This&lt;/a&gt; is a blog, it's not a hosting service.  "/>
+						<outline text="On this blog, I write about my experiences and post observations about the things I'm interested in. "/>
+						</outline>
+					<outline text="Role of comments">
+						<outline text="The role of comments on this site are to add information and perspectives that might be interesting to the author of the blog, primarily, and secondarily to people who read the blog. "/>
+						<outline text="They should always take into account what is said in the post. If you haven't read the post in full, reasonably carefully, don't comment. If it is obvious that you have not read the post, your comment will be deleted."/>
+						</outline>
+					<outline text="Not a free speech zone">
+						<outline text="It's not a free speech zone. It's not a place for you to be heard. "/>
+						</outline>
+					<outline text="Moderation">
+						<outline text="Comments are moderated. Any comment that does not follow these guidelines will be deleted. If you post more comments that violate the guidelines, or complain about your comment being deleted, you'll be blocked from posting  comments. "/>
+						</outline>
+					<outline text="No spam!">
+						<outline text="It's not a place for you to promote your products, services, blog, initiatives, political causes. Don't post spam. "/>
+						</outline>
+					<outline text="Don't argue">
+						<outline text="I'm not interested in debates here on my blog. "/>
+						<outline text="If you want a debate, host it somewhere else, and if I'm interested in participating I will."/>
+						<outline text="If not, I won't. (I probably won't, I don't enjoy debates.)"/>
+						</outline>
+					<outline text="No blog posts">
+						<outline text="Keep your comments short. If you find you need to post more than a few sentences that's a clue that you are really writing an blog post, which is great, not a comment. Go get a blog if you don't already have one and post your ideas there, along with a link to this post so people know what it's in reference to. You may send me a link via email if you want me to read it."/>
+						</outline>
+					<outline text="Not personal">
+						<outline text="Absolutely no personal comments about me or anyone else. "/>
+						<outline text="Yes, I can handle disagreement. I do want to hear other points of view. Briefly stated without getting personal."/>
+						<outline text="Your comment wasn't moderated because you disagreed, it was moderated because you didn't follow the rules."/>
+						</outline>
+					<outline text="How to find this doc">
+						<outline text="There's a link to this page in &lt;a href=&quot;http://scripting.com/2016/01/21/guidelines.png&quot;&gt;the Stuff menu&lt;/a&gt; on every new story page on Scripting News. "/>
+						<outline text="Here's an &lt;a href=&quot;http://scripting.com/liveblog/users/davewiner/2016/01/20/0902.html&quot;&gt;example&lt;/a&gt; of a story page."/>
+						</outline>
+					<outline text="Summary">
+						<outline text="These guidelines have worked well to keep comments simple and useful to everyone. The idea is to share missing information. To answer questions posed in the post. It is not a place for speeches, there are plenty of places for that on the web. We've been doing this for a long time and have heard all the arguments, and are not interested in hearing them again. "/>
+						<outline text="&lt;a href=&quot;http://davewiner.com/&quot;&gt;Dave Winer&lt;/a&gt;"/>
+						</outline>
+					</outline>
+				<outline text="Menuland" created="Mon, 24 Oct 2011 15:14:23 GMT" domain="abc.hyper.camp" flMenuFromOutline="true" pgfnum="2724">
+					<outline text="East" created="Mon, 24 Oct 2011 15:14:26 GMT" pgfnum="2725">
+						<outline text="New Jersey" created="Mon, 24 Oct 2011 15:14:39 GMT" pgfnum="2729"/>
+						<outline text="Connecticut" created="Mon, 24 Oct 2011 15:14:43 GMT" pgfnum="2730"/>
+						<outline text="New Hampshire" created="Mon, 24 Oct 2011 15:14:46 GMT" pgfnum="2731"/>
+						<outline text="Maine"/>
+						</outline>
+					<outline text="West" created="Mon, 24 Oct 2011 15:14:32 GMT" pgfnum="2726">
+						<outline text="California" created="Mon, 24 Oct 2011 15:14:53 GMT" pgfnum="2732"/>
+						<outline text="Arizona" created="Mon, 24 Oct 2011 15:14:56 GMT" pgfnum="2733">
+							<outline text="Phoenix" created="Mon, 24 Oct 2011 17:30:05 GMT" pgfnum="2741"/>
+							<outline text="Tucson" created="Mon, 24 Oct 2011 17:30:08 GMT" pgfnum="2742"/>
+							<outline text="Mesa" created="Mon, 24 Oct 2011 17:30:11 GMT" pgfnum="2743"/>
+							</outline>
+						<outline text="Oregon" created="Mon, 24 Oct 2011 15:14:58 GMT" pgfnum="2734"/>
+						</outline>
+					<outline text="North" created="Mon, 24 Oct 2011 15:14:33 GMT" pgfnum="2727">
+						<outline text="Michigan" created="Mon, 24 Oct 2011 15:15:06 GMT" pgfnum="2735"/>
+						<outline text="Wisconsin" created="Mon, 24 Oct 2011 15:15:09 GMT" pgfnum="2736"/>
+						<outline text="Minnesota" created="Mon, 24 Oct 2011 15:15:13 GMT" pgfnum="2737"/>
+						</outline>
+					<outline text="South" created="Mon, 24 Oct 2011 15:14:34 GMT" pgfnum="2728">
+						<outline text="Texas" created="Mon, 24 Oct 2011 15:15:18 GMT" pgfnum="2738"/>
+						<outline text="Louisiana" created="Mon, 24 Oct 2011 15:15:21 GMT" pgfnum="2739"/>
+						<outline text="Mississippi" created="Mon, 24 Oct 2011 15:15:23 GMT" pgfnum="2740"/>
+						</outline>
+					</outline>
+				<outline text="Outliner howto" created="Mon, 19 Aug 2013 23:24:58 GMT" domain="outlinerhowto.opml.org" name="outlinerHowto" type="blogpost">
+					<outline text="What is an outliner?" created="Mon, 19 Aug 2013 23:56:38 GMT">
+						<outline text="An &lt;b&gt;outliner&lt;/b&gt; is a text editor that organizes information in a hierarchy, allowing users to control the level of detail and to reorganize according to structure. Your notes can have full detail, yet be organized so a casual reader can get a quick overview. Outlining is a great way for teams to organize work. "/>
+						<outline text="&lt;a href=&quot;http://www.ftrain.com/&quot;&gt;Paul Ford&lt;/a&gt;, an early user of our software, said: &quot;What Google Maps does for geography, outliners do for ideas.&quot; Map software lets you zoom in at any level of detail. Same with outliners."/>
+						<outline text="&lt;a href=&quot;http://littleoutliner.com/&quot;&gt;Little Outliner&lt;/a&gt; is an example of an outliner, as described in this doc."/>
+						</outline>
+					<outline text="Practice outliner" isComment="true" created="Sat, 03 Aug 2013 20:01:28 GMT">
+						<outline text="The box below contains a live outline. You can expand and collapse headlines, move things around with the mouse or keyboard. All the operations described on this page work. You can't do any harm. If you mess up the outline, just refresh the page. "/>
+						<outline text="&lt;div style=&quot;margin-top: -14px; margin-bottom: 20px;&quot;&gt;&lt;%includeHTTP (&quot;http://uk9v0.blorkmark.com/&quot;)%&gt;&lt;/div&gt;"/>
+						<outline text="When you're ready to &lt;i&gt;use&lt;/i&gt; an outliner, try &quot;Fargo&quot;. It's a very simple app, runs in a web browser, and saves through Dropbox. "/>
+						</outline>
+					<outline text="The bar cursor and text cursor" created="Sat, 03 Aug 2013 20:00:58 GMT">
+						<outline text="&lt;img src=&quot;http://static.scripting.com/larryKing/images/2013/03/15/screen1.gif&quot; width=&quot;151&quot; height=&quot;217&quot; border=&quot;0&quot; style=&quot;float: right; padding-left: 35px; padding-bottom: 10px; padding-top: 10px; padding-right: 15px;&quot; alt=&quot;A picture named states1.gif&quot;&gt;In an &lt;b&gt;outliner&lt;/b&gt; are two kinds of cursors, a &lt;b&gt;bar cursor&lt;/b&gt;, which is black, and covers a whole headline, and a &lt;b&gt;text cursor&lt;/b&gt;, which is a vertical line, also called a caret. The text cursor flashes slowly. " created="Tue, 12 Mar 2013 17:31:48 GMT" pgfnum="20240"/>
+						<outline text="Each headline has a &lt;b&gt;wedge&lt;/b&gt;, displayed to the left of the text, a small triangle that's either gray or black. If it's black that means there's unexpanded text below the headline." created="Wed, 13 Mar 2013 15:44:35 GMT" pgfnum="20313"/>
+						<outline text="There are two modes, &lt;b&gt;structure mode&lt;/b&gt; and &lt;b&gt;text mode&lt;/b&gt;. To go from text to structure mode, click once on a wedge. To go from structure to text mode, click on any character inside the headline." created="Tue, 12 Mar 2013 17:33:06 GMT" pgfnum="20241"/>
+						<outline text="To &lt;b&gt;expand&lt;/b&gt; a headline, double-click on the black wedge. To &lt;b&gt;collapse&lt;/b&gt;, double-click on the wedge of an expanded headline." created="Wed, 13 Mar 2013 15:45:43 GMT" pgfnum="20314"/>
+						<outline text="The headline the bar cursor points to is called the &lt;b&gt;bar cursor headline&lt;/b&gt;. You'll see that term used in the docs below, because many commands apply to the bar cursor headline. In the screen shot at the top of this section, the bar cursor headline is the United States." created="Tue, 12 Mar 2013 17:34:17 GMT" pgfnum="20244"/>
+						</outline>
+					<outline text="What is an outline?" created="Sat, 03 Aug 2013 20:02:35 GMT">
+						<outline text="An &lt;b&gt;outline&lt;/b&gt; can contain many &lt;b&gt;headlines&lt;/b&gt; that are organized in a hierarchy. " created="Wed, 13 Mar 2013 15:32:56 GMT" pgfnum="20305"/>
+						<outline text="A top level headline is called a &lt;b&gt;summit&lt;/b&gt;. An outline can have many summits." created="Wed, 13 Mar 2013 15:33:32 GMT" pgfnum="20306"/>
+						<outline text="Underneath a summit are more headlines, which in turn contain headlines, many levels deep." created="Wed, 13 Mar 2013 15:33:56 GMT" pgfnum="20307"/>
+						<outline text="Headlines can also have &lt;b&gt;attributes&lt;/b&gt; such as a creation date or a serial number. Headlines are often called &lt;b&gt;nodes&lt;/b&gt; in this context. " collapse="true" created="Wed, 13 Mar 2013 15:36:58 GMT" pgfnum="20309"/>
+						<outline text="The whole thing, a hierarchy of headlines with attributes, is the outline." created="Wed, 13 Mar 2013 15:36:36 GMT" pgfnum="20308"/>
+						</outline>
+					<outline text="What does Cmd mean?" created="Sat, 03 Aug 2013 20:03:43 GMT">
+						<outline text="If you're using a Macintosh, when we say &lt;i&gt;Cmd-X &lt;/i&gt;that means hold down the Command key, the one with the &amp;#8984; on it, and press X at the same time." created="Sat, 03 Aug 2013 20:03:54 GMT"/>
+						<outline text="If you use Windows or Linux, when you see Cmd-X, think Control-X. We use this short-hand rather than repeating this equivalence every time we talk about a Control key." created="Sat, 03 Aug 2013 20:04:24 GMT"/>
+						</outline>
+					<outline text="How do you enter text into an outliner?" created="Sat, 03 Aug 2013 20:09:48 GMT">
+						<outline text="To create a new headline, put the cursor on the headline above where you want the headline to appear and press Return. " created="Tue, 12 Mar 2013 18:21:00 GMT" pgfnum="20285"/>
+						<outline text="Type as you would into a text editor. When you want to create another headline, press Return. " created="Tue, 12 Mar 2013 18:21:38 GMT" pgfnum="20286"/>
+						<outline text="If you want to move the headline in by one level press Tab. To move it out by one level, press Shift-Tab. " created="Tue, 12 Mar 2013 18:21:59 GMT" pgfnum="20287"/>
+						<outline text="You can bolden the selected text with Cmd-B, and italicize with Cmd-I. To un-bolden or un-italicize, just repeat the Cmd key." created="Tue, 12 Mar 2013 18:23:40 GMT" pgfnum="20289"/>
+						</outline>
+					<outline text="How does expand and collapse work?" created="Sat, 03 Aug 2013 20:10:12 GMT">
+						<outline text="&lt;img src=&quot;http://static.scripting.com/larryKing/images/2013/03/12/states2.gif&quot; width=&quot;158&quot; height=&quot;275&quot; border=&quot;0&quot; style=&quot;float: right; padding-left: 35px; padding-bottom: 10px; padding-top: 10px; padding-right: 15px;&quot; alt=&quot;A picture named states2.gif&quot;&gt;If you want to expand a headline, to see what's underneath, double-click on its wedge." created="Tue, 12 Mar 2013 17:40:01 GMT" pgfnum="20246"/>
+						<outline text="This only works if the wedge is black. If it's gray that means there's nothing underneath to expand. So you can see from a distance where there's hidden text." created="Tue, 12 Mar 2013 17:40:24 GMT" pgfnum="20247"/>
+						<outline text="To the right is a screen shot that shows the Midwest headline expanded. The Michigan headline has a black wedge, that means there are unexpanded items below it, entries for the cities of Flint, Detroit, Ann Arbor." created="Tue, 12 Mar 2013 17:40:51 GMT" pgfnum="20248"/>
+						<outline text="To collapse a level, double-click on the wedge next to its parent." created="Tue, 12 Mar 2013 17:43:56 GMT" pgfnum="20249"/>
+						<outline text="You can expand and collapse using the keyboard with Cmd-, (comma). If the bar cursor headline is expanded it is collapsed. If it's collapsed it expands. " created="Wed, 20 Mar 2013 23:02:50 GMT" pgfnum="20922"/>
+						</outline>
+					<outline text="Can you explain how the arrow keys work?" created="Sat, 03 Aug 2013 20:10:33 GMT">
+						<outline text="When you're in structure mode..." created="Tue, 12 Mar 2013 18:14:09 GMT" pgfnum="20280">
+							<outline text="&lt;i class=&quot;icon-arrow-up&quot;&gt;&lt;/i&gt; moves to the previous headline at the same level." created="Tue, 12 Mar 2013 18:12:13 GMT" pgfnum="20276"/>
+							<outline text="&lt;i class=&quot;icon-arrow-down&quot;&gt;&lt;/i&gt; moves to the next headline at the same level." created="Tue, 12 Mar 2013 18:12:57 GMT" pgfnum="20277"/>
+							<outline text="&lt;i class=&quot;icon-arrow-right&quot;&gt;&lt;/i&gt; moves &lt;b&gt;flatdown&lt;/b&gt; -- to the next headline, regardless of level." created="Tue, 12 Mar 2013 18:13:08 GMT" pgfnum="20278"/>
+							<outline text="&lt;i class=&quot;icon-arrow-left&quot;&gt;&lt;/i&gt; moves &lt;b&gt;flatup&lt;/b&gt;, to the previous headline, regardless of level." created="Tue, 12 Mar 2013 18:13:29 GMT" pgfnum="20279"/>
+							</outline>
+						<outline text="When you're in text mode..." created="Tue, 12 Mar 2013 18:14:16 GMT" pgfnum="20281">
+							<outline text="&lt;i class=&quot;icon-arrow-left&quot;&gt;&lt;/i&gt; and &lt;i class=&quot;icon-arrow-right&quot;&gt;&lt;/i&gt; move to the previous and next character. " created="Tue, 12 Mar 2013 18:14:21 GMT" pgfnum="20282"/>
+							<outline text="&lt;i class=&quot;icon-arrow-up&quot;&gt;&lt;/i&gt; and &lt;i class=&quot;icon-arrow-down&quot;&gt;&lt;/i&gt; move to the next and previous headline, regardless of level." created="Tue, 12 Mar 2013 18:14:35 GMT" pgfnum="20283"/>
+							</outline>
+						</outline>
+					<outline text="How do you delete a headline?" created="Sat, 03 Aug 2013 20:11:17 GMT">
+						<outline text="You can delete a headline and all its subs by placing the bar cursor on the headline, and press the Delete key." created="Tue, 12 Mar 2013 18:24:07 GMT" pgfnum="20291"/>
+						</outline>
+					<outline text="How does Undo work?" created="Sat, 03 Aug 2013 20:11:35 GMT">
+						<outline text="If you do something that you want undone, press Cmd-Z to Undo." created="Tue, 12 Mar 2013 18:07:38 GMT" pgfnum="20270"/>
+						</outline>
+					<outline text="How do I reorganize an outline?" created="Sat, 03 Aug 2013 20:12:06 GMT">
+						<outline text="Suppose we decide to reclassify Arizona as a Far West state (it's currently in the Southwest). " created="Tue, 12 Mar 2013 17:46:22 GMT" pgfnum="20251"/>
+						<outline text="To move it using the mouse, first expand Southwest by double-clicking on its wedge. Then click on the wedge, and hold the mouse button down, and move the mouse pointer to the wedge in front of Far West, and while continuing to hold the button down, nudge the mouse to the right until the arrow points down and to the right. Let up the mouse. Far West expands and Arizona becomes the first item under Far West." created="Tue, 12 Mar 2013 17:48:06 GMT" pgfnum="20252"/>
+						<outline text="To move it using the keyboard, expand Southwest and click the wedge in front of Arizona. Press Cmd-L, then Cmd-U repeated until it's just below Far West. Then Cmd-R to move it under Far West." created="Tue, 12 Mar 2013 17:51:05 GMT" pgfnum="20253"/>
+						<outline text="The keystrokes for moving are Cmd-U for up, Cmd-D for down, Cmd-L for left, and Cmd-R for right." created="Tue, 12 Mar 2013 17:52:32 GMT" pgfnum="20255"/>
+						<outline text="Tab does the same thing as Cmd-R and Shift-tab is the same as Cmd-L." created="Tue, 12 Mar 2013 17:54:46 GMT" pgfnum="20256"/>
+						<outline text="Either method works as well as the other, it's just a matter of preference or what's convenient." created="Tue, 12 Mar 2013 17:52:17 GMT" pgfnum="20254"/>
+						</outline>
+					<outline text="Shift-click and Cmd-A" created="Tue, 12 Mar 2013 17:57:50 GMT" pgfnum="20263">
+						<outline text="Reorganizing usually applies only to the bar cursor headline. " created="Tue, 12 Mar 2013 17:58:38 GMT" pgfnum="20265"/>
+						<outline text="But you can select a group of headlines using shift-click and then use dragging move or the Cmd keystrokes to reorganize." created="Tue, 12 Mar 2013 18:09:35 GMT" pgfnum="20274"/>
+						<outline text="To select all the items at a level, Select All or Cmd-A." created="Tue, 12 Mar 2013 18:09:12 GMT" pgfnum="20273"/>
+						</outline>
+					<outline text="Return vs Enter" created="Wed, 20 Mar 2013 23:01:27 GMT" pgfnum="20920">
+						<outline text="If you have a keyboard that distinguishes between Return and Enter (as the full Macintosh keyboard does), then the Return key will work as described above, and Enter toggles between text and structure mode. " created="Wed, 20 Mar 2013 23:01:31 GMT" pgfnum="20921"/>
+						</outline>
+					<outline text="Promote and demote" created="Tue, 12 Mar 2013 17:55:53 GMT" pgfnum="20258">
+						<outline text="If you decide that a category is no longer necessary and want to move all of the former sub-heads out to the same level as their parent, that's when you need to &lt;b&gt;promote&lt;/b&gt; the subs. To do so, put the cursor on the parent and press Cmd-[ to promote the subs." created="Tue, 12 Mar 2013 17:56:00 GMT" pgfnum="20259"/>
+						<outline text="Suppose you have a list of items and want to move them all under a new parent. That's called &lt;b&gt;demote&lt;/b&gt; and is a little more tricky." created="Tue, 12 Mar 2013 17:57:05 GMT" pgfnum="20261"/>
+						<outline text="Create the new parent headline at the same level as the soon-to-be subs, and just before them in their list. Then press Cmd-] to demote. " created="Tue, 12 Mar 2013 18:06:26 GMT" pgfnum="20267"/>
+						</outline>
+					<outline text="Cut, Copy, Paste" created="Tue, 12 Mar 2013 18:07:49 GMT" pgfnum="20271">
+						<outline text="The normal clipboard operations apply. To Cut, press Cmd-X, to Copy press Cmd-C and to paste press Cmd-V." created="Tue, 12 Mar 2013 18:07:54 GMT" pgfnum="20272"/>
+						<outline text="&lt;a name=&quot;attributes&quot;&gt;&lt;/a&gt;" created="Wed, 24 Apr 2013 15:33:03 GMT" pgfnum="23300"/>
+						</outline>
+					<outline text="Wedges and attributes" created="Sat, 16 Mar 2013 20:27:25 GMT" pgfnum="20558">
+						<outline text="Earlier in this document we talked about wedges, as gray or black triangles. But you'll see other wedges from time to time. They usually indicate that there are attributes attached to the headline. Attributes themselves are usually not visible. " created="Sat, 16 Mar 2013 20:28:09 GMT" pgfnum="20560"/>
+						<outline text="When you're moving headlines by dragging with the mouse, the wedges on the target headline will change to an arrow, to indicate where the headline being dragged will be deposited when you let up." created="Sat, 16 Mar 2013 20:31:14 GMT" pgfnum="20561"/>
+						</outline>
+					<outline text="Render mode" created="Fri, 22 Mar 2013 14:07:03 GMT" pgfnum="21065">
+						<outline text="Sometimes your outline text will be published on web pages. You can enter HTML markup in your text, and it will correctly flow out to the OPML file. " created="Fri, 22 Mar 2013 14:07:07 GMT" pgfnum="21066"/>
+						<outline text="A limited set of markup -- boldface text, italic text and links -- will be rendered if the outliner is in &lt;b&gt;render mode&lt;/b&gt;. " created="Fri, 22 Mar 2013 15:47:42 GMT" pgfnum="21106"/>
+						<outline text="When the outliner starts up, it is in this mode. If you want to see the markup and possibly edit it, you can go into &lt;b&gt;non-render mode&lt;/b&gt; by pressing Cmd-` and return to render mode by pressing it again. It's a toggle." created="Fri, 22 Mar 2013 14:56:10 GMT" pgfnum="21088"/>
+						</outline>
+					<outline text="One-line JavaScript code" created="Fri, 22 Mar 2013 14:59:41 GMT" pgfnum="21089">
+						<outline text="If you enter a snippet of JavaScript code into a headline in the outliner, you can run the code by pressing Cmd-/." created="Fri, 22 Mar 2013 14:59:51 GMT" pgfnum="21090"/>
+						<outline text="The result is entered as a sub-head of the headline containing the script code." created="Fri, 22 Mar 2013 15:00:18 GMT" pgfnum="21091"/>
+						<outline text="For example, if you enter 12 + 12 in a headline and press Cmd-/, its sub-head will contain 24. " created="Fri, 22 Mar 2013 15:00:43 GMT" pgfnum="21092"/>
+						<outline text="You can enter code as complex as you like, you can even call functions implemented by the outliner itself. " created="Fri, 22 Mar 2013 15:01:10 GMT" pgfnum="21093"/>
+						<outline text="It can be useful, if you're a programmer, to keep a library of one-liners in a section of your outline, ready for you to Cmd-/ them. " created="Fri, 22 Mar 2013 15:01:51 GMT" pgfnum="21095"/>
+						</outline>
+					<outline text="Commenting" created="Tue, 12 Mar 2013 18:24:30 GMT" pgfnum="20292">
+						<outline text="In programming languages and some content management systems, you can &quot;comment out&quot; text, so that it isn't processed. This allows you to leave notes to yourself that don't get passed along, but are saved in the OPML file. The comments will still be there next time you open the file. " created="Tue, 12 Mar 2013 18:24:32 GMT" pgfnum="20293"/>
+						<outline text="To &lt;b&gt;comment&lt;/b&gt; a branch of the outline, press Cmd-\. To uncomment, repeat the keystroke." created="Tue, 12 Mar 2013 18:25:18 GMT" pgfnum="20294"/>
+						<outline text="When you comment an item, its wedge changes to a chevron, as well as the wedge next to all the items below it." created="Sat, 16 Mar 2013 20:34:32 GMT" pgfnum="20562"/>
+						</outline>
+					</outline>
+				<outline text="What is rss.js?" domain="rssjs.org" name="whatIsRssjs" type="blogpost">
+					<outline text="Important">
+						<outline text="There's a new &lt;a href=&quot;https://github.com/scripting/Scripting-News/blob/master/rss-in-json/README.md&quot;&gt;doc&lt;/a&gt;."/>
+						<outline text="And a &lt;a href=&quot;http://scripting.com/2017/06/05.html#a080612&quot;&gt;blog post&lt;/a&gt; that explains."/>
+						<outline text="6/5/17 by DW"/>
+						</outline>
+					<outline text="History">
+						<outline text="This is a restored page. I let the domain lapse in 2014, but thankfully the site was &lt;a href=&quot;https://web.archive.org/web/*/http://rssjs.org:80/&quot;&gt;preserved&lt;/a&gt; by archive.org. The last update was 9/10/2012; 7:34:01 PM. "/>
+						</outline>
+					<outline text="Background">
+						<outline text="My name is &lt;a href=&quot;http://davewiner.com/&quot;&gt;Dave Winer&lt;/a&gt;."/>
+						<outline text="&lt;a href=&quot;http://cyber.harvard.edu/rss/rss.html&quot;&gt;RSS&lt;/a&gt; is a popular syndication format, produced by a wide of publications, blogs and apps. It's used to distribute items of content, which can have a title, link and/or description. It supports categories, enclosures, comments and allows for namespaces to extend the format. RSS is the basis for podcasting."/>
+						<outline text="RSS is an &lt;a href=&quot;https://www.w3.org/XML/&quot;&gt;XML&lt;/a&gt;-based format. XML is widely deployed and debugged, and will be with us for a very long time. For example all the HTML content on the web is in XML."/>
+						<outline text="&lt;a href=&quot;http://www.json.org/&quot;&gt;JSON&lt;/a&gt; is gaining popularity as a parallel to XML."/>
+						</outline>
+					<outline text="What is rss.js?">
+						<outline text="At this stage it's a question."/>
+						<outline text="Should we distribute RSS data in JSON as well as XML?"/>
+						<outline text="If so, what would JSONified RSS look like?"/>
+						<outline text="What applications would arise from it?"/>
+						</outline>
+					<outline text="Example">
+						<outline text="Here's the Scripting News RSS 2.0 feed expressed in JSON."/>
+						<outline text="&lt;a href=&quot;http://scripting.com/rss.js&quot;&gt;http://scripting.com/rss.js&lt;/a&gt;"/>
+						<outline text="It's a simple mapping. If an element in the XML has attributes, we make each attribute a sub-element, and put the value of the element in a sub-element named #value."/>
+						</outline>
+					<outline text="Discussion">
+						<outline text="Can you put together a demo JavaScript app that runs off this data?"/>
+						<outline text="What changes, if any, do you feel need to be made to this format?"/>
+						<outline text="It's nice that the browsers don't mess with rss.js data as they do with the XML version. Can we hope that they leave this format alone? :-)"/>
+						<outline text="What icon would we use? The same orange radio signal icon that Mozilla and Microsoft came up with?"/>
+						<outline text="Update: I wrote a &lt;a href=&quot;https://web.archive.org/web/20140218231452/http://scripting.com/stories/2012/09/10/rssInJsonForReal.html&quot;&gt;blog post&lt;/a&gt; about this."/>
+						</outline>
+					</outline>
+				<outline text="RSS-in-JSON" domain="rssinjson.scripting.com" name="rssinjson" type="blogpost">
+					<outline text="What's going on?">
+						<outline text="There's been some recent renewed interest in using JSON as a way of transporting information that's usually sent via RSS 2.0. "/>
+						<outline text="In 2012, I &lt;a href=&quot;http://rssjs.org/&quot;&gt;expressed&lt;/a&gt; an interest in this and quite a discussion followed, it's a really interesting snapshot. The format I described didn't, as far as I know, gain traction, and I stopped updating the JSON version of Scripting News in 2014, and let the domain lapse. "/>
+						<outline text="I believe in Postel's Robustness Principle. We've learned over and over that one format is better than two, no matter how much better the second is. The second format adds complexity, and we can't ever expect to retire an open format. It would defy the intent of &quot;open&quot; to even try. After all who are we? The format belongs to the world, not any person. It's the fundamental difference between open structures and silos. "/>
+						<outline text="But there may be advantages to using JSON. We might as well find out. But there's no need to rip up the pavement. We'll use all the well-understood concepts of RSS, and change the format we use to transmit them. That's why simply the name of this project is RSS-in-JSON."/>
+						<outline text="More ideas on how to create and evolve standards in my &lt;a href=&quot;http://scripting.com/2017/05/09/rulesForStandardsmakers.html&quot;&gt;Rules for standards-makers&lt;/a&gt;, published in May 2017."/>
+						</outline>
+					</outline>
+				<outline text="The &quot;source&quot; namespace" domain="source.scripting.com" name="theSourceNamespace" type="blogpost">
+					<outline text="What is it?">
+						<outline text="The &lt;i&gt;source&lt;/i&gt; namespace is a collection of add-ons to &lt;a href=&quot;https://cyber.harvard.edu/rss/rss.html&quot;&gt;RSS 2.0&lt;/a&gt; that provide information about where the content in the feed comes from, so it's possible that aggregators can provide a richer experience for readers. " created="Sat, 12 Jul 2014 13:28:27 GMT"/>
+						<outline text="This is the second version of the source namespace. The docs for the first version are &lt;a href=&quot;http://source.smallpict.com/2014/07/12/theSourceNamespace.html&quot;&gt;here&lt;/a&gt;. "/>
+						</outline>
+					<outline text="Example feeds" created="Sat, 12 Jul 2014 13:42:04 GMT">
+						<outline text="The &lt;a href=&quot;http://scripting.com/rss.xml&quot;&gt;feed&lt;/a&gt; for my blog, &quot;scripting news&quot;, implements some of the features outlined here. " created="Sat, 12 Jul 2014 13:42:06 GMT"/>
+						<outline text="Others are implemented in the &lt;a href=&quot;http://links.scripting.com/rss.xml&quot;&gt;feed&lt;/a&gt; for my linkblog." created="Mon, 14 Jul 2014 11:51:38 GMT"/>
+						</outline>
+					<outline text="source:account" created="Sat, 12 Jul 2014 13:38:17 GMT">
+						<outline text="A channel-level element." created="Sat, 12 Jul 2014 15:22:07 GMT"/>
+						<outline text="Has one required attribute, service, the name of a service such as &quot;twitter&quot; or &quot;facebook&quot;. The value is case insensitive, so Twitter is the same as twitter." created="Sat, 12 Jul 2014 13:39:53 GMT"/>
+						<outline text="&lt;code&gt;&amp;lt;source:account service=&quot;facebook&quot;&gt;dave.winer.12&amp;lt;/source:account&gt;&lt;/code&gt;" created="Sat, 12 Jul 2014 13:41:21 GMT"/>
+						<outline text="The value of source:account is the username or screenname of the author of the feed on the indicated service." created="Sat, 12 Jul 2014 15:22:24 GMT" leftIndent="30"/>
+						</outline>
+					<outline text="source:outline" created="Sat, 12 Jul 2014 14:53:20 GMT">
+						<outline text="An item-level element. " created="Sat, 12 Jul 2014 15:21:59 GMT"/>
+						<outline text="Exactly the same as the OPML outline element. " created="Sat, 12 Jul 2014 14:53:27 GMT"/>
+						<outline text="In RSS, it contains the source of the outline used to render the text of the item." created="Sat, 12 Jul 2014 14:54:04 GMT"/>
+						<outline text="Useful if the aggregator has the ability to render outlines on its own." created="Sat, 12 Jul 2014 14:54:29 GMT"/>
+						<outline text="&lt;code&gt;&amp;lt;source:outline text=&quot;A silly example&quot; created=&quot;Sun, 13 Jul 2014 12:54:20 GMT&quot; type=&quot;idea&quot; &gt;&lt;/code&gt;"/>
+						<outline text="The example above is very simple and contains no nested structure, which is what makes outlines useful. Check out the Scripting News &lt;a href=&quot;http://scripting.com/rss.xml&quot;&gt;feed&lt;/a&gt; for more extensive examples." created="Mon, 14 Jul 2014 12:15:26 GMT"/>
+						</outline>
+					<outline text="source:archive" created="Mon, 14 Jul 2014 12:06:39 GMT">
+						<outline text="A channel-level element."/>
+						<outline text="Links to the calendar-structured archive for the feed. "/>
+						<outline text="The folder pointed to by this address contains one folder for each year, 2009, 2010, 2011, etc."/>
+						<outline text="Each of those folders contains one folder for each month, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12. The month folders must be zero-padded to two places. Folders may be missing, indicating that there is no archived content for the month."/>
+						<outline text="Each of the month folders contains folders for the days of the month. Day folder names are also zero-padded to two places and may be missing if there were no updates on the given day. "/>
+						<outline text="Each day folder contains a file named rss.xml, unless the optional &amp;lt;source:filename&gt; sub-element is supplied, which overrides the default. This makes it possible for a single calendar structure to store the archive of more than one feed. "/>
+						<outline text="&amp;lt;source:archive&gt; must contain at least two sub-elements: &amp;lt;source:link&gt;, the address of the archive and &amp;lt;source:startDay&gt;, a hyphen-delimited date, formatted as yyyy-mm-dd, for the first element of the archive. "/>
+						<outline text="It may contain two optional sub-elements: &amp;lt;source:endDay&gt; which is the hyphen-delimited date (yyyy-mm-dd) for the last element in the archive; and &amp;lt;source:filename&gt; as expained above."/>
+						<outline text="If &amp;lt;source:endDay&gt; defaults to the pubDate of the feed, if it's specified. If not, it defaults to the current date."/>
+						<outline text="&lt;code&gt;&amp;lt;source:archive&gt;&lt;/code&gt;"/>
+						<outline text="&lt;code&gt;&amp;lt;source:url&gt;http://static.scripting.com/myReallySimple/&amp;lt;/source:url&gt;&lt;/code&gt;"/>
+						<outline text="&lt;code&gt;&amp;lt;source:filename&gt;linkblog.xml&amp;lt;/source:filename&gt;&lt;/code&gt;"/>
+						<outline text="&lt;code&gt;&amp;lt;source:startDay&gt;2010-12-25&amp;lt;/source:startDay&gt;&lt;/code&gt;"/>
+						<outline text="&lt;code&gt;&amp;lt;source:endDay&gt;2014-07-14&amp;lt;/source:endDay&gt;&lt;/code&gt;"/>
+						<outline text="&lt;code&gt;&amp;lt;/source:archive&gt;&lt;/code&gt;"/>
+						</outline>
+					<outline text="source:localTime" created="Mon, 14 Jul 2014 12:06:56 GMT">
+						<outline text="An item-level element." created="Mon, 14 Jul 2014 12:09:37 GMT"/>
+						<outline text="&lt;code&gt;&amp;lt;source:localTime&gt;3/15/2011; 10:34:54 AM&amp;lt;/source:localTime&gt;&lt;/code&gt;"/>
+						<outline text="A simple entirely human-readable way for the editor of the site to see what time, in his or her time zone, the feed was last updated. Must-have for debugging and sanity-preservation if you have trouble converting GMT to local time in your head (as I do). The format here is entirely up to the editor of the site."/>
+						</outline>
+					<outline text="source:linkFull" created="Mon, 14 Jul 2014 12:07:12 GMT">
+						<outline text="An item-level element." created="Mon, 14 Jul 2014 12:09:37 GMT"/>
+						<outline text="It's the unshortened version of &amp;lt;link&gt;. "/>
+						<outline text="&lt;code&gt;&amp;lt;source:linkFull&gt;http://nyu.edu/stories/very-long-name/&amp;lt;/source:linkFull&gt;&lt;/code&gt;"/>
+						<outline text="Only include this elemement when &amp;lt;link&gt; is a shortened url."/>
+						</outline>
+					</outline>
+				</outline>
+			</outline>
+		<outline text="Notes" isComment="true">
+			<outline text="json.compile (tcp.httpreadurl (&quot;http://cleveland.scripting.com/loaddomains&quot;), @scratchpad.loaddomainsresult); speaker.beep (); clock.now ()">
+				<outline text="&quot;5/26/17; 10:45:03 AM&quot;" isComment="true"/>
+				</outline>
+			</outline>
+		</body>
+	</opml>

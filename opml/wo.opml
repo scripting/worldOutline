@@ -2,7 +2,7 @@
 <opml version="2.0">
 	<head>
 		<title>wo.js</title>
-		<dateModified>&lt;%dateModified%></dateModified>
+		<dateModified>Sat, 14 May 2022 15:53:42 GMT</dateModified>
 		<expansionState></expansionState>
 		<vertScrollState>1</vertScrollState>
 		<windowTop>300</windowTop>
@@ -11,7 +11,7 @@
 		<windowRight>1500</windowRight>
 		</head>
 	<body text="wo.js">
-		<outline created="Mon, 03 Feb 2014 03:21:03 GMT" pgfnum="36831" text="var myVersion = &quot;0.51a&quot;, myProductName = &quot;World Outline&quot;;   "></outline>
+		<outline created="Mon, 03 Feb 2014 03:21:03 GMT" pgfnum="36831" text="var myVersion = &quot;v0.5.2&quot;, myProductName = &quot;World Outline&quot;;  "></outline>
 		<outline text="var fs = require (&quot;fs&quot;);"></outline>
 		<outline text="var request = require (&quot;request&quot;);"></outline>
 		<outline text="var opmlParser = require (&quot;opmlparser&quot;);"></outline>
